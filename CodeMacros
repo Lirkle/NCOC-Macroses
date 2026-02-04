@@ -1,0 +1,110 @@
+Option Explicit
+
+Public Sub DeleteStrikethroughText_Fix()
+    Dim sld As Slide
+    Dim deleted As Long
+
+    ' 1) Обычные слайды
+    For Each sld In ActivePresentation.Slides
+        deleted = deleted + ProcessShapesCollection(sld.Shapes)
+        ' Если нужно чистить заметки к слайдам, раскомментируй:
+        'deleted = deleted + ProcessShapesCollection(sld.NotesPage.Shapes)
+    Next sld
+
+    ' 2) Если у тебя зачеркнутый текст сидит в Макете или Мастере, включи это:
+    deleted = deleted + ProcessMasterAndLayouts()
+
+    MsgBox "Удалено зачеркнутых символов: " & deleted, vbInformation, "Готово"
+End Sub
+
+Private Function ProcessMasterAndLayouts() As Long
+    Dim cnt As Long
+    Dim lay As CustomLayout
+
+    ' Slide Master
+    cnt = cnt + ProcessShapesCollection(ActivePresentation.SlideMaster.Shapes)
+
+    ' Layouts
+    For Each lay In ActivePresentation.SlideMaster.CustomLayouts
+        cnt = cnt + ProcessShapesCollection(lay.Shapes)
+    Next lay
+
+    ProcessMasterAndLayouts = cnt
+End Function
+
+Private Function ProcessShapesCollection(ByVal shps As Shapes) As Long
+    Dim shp As Shape
+    Dim cnt As Long
+
+    For Each shp In shps
+        cnt = cnt + ProcessShapeRecursive(shp)
+    Next shp
+
+    ProcessShapesCollection = cnt
+End Function
+
+Private Function ProcessShapeRecursive(ByVal shp As Shape) As Long
+    Dim cnt As Long
+    Dim i As Long
+
+    ' 1) Группы
+    If shp.Type = msoGroup Then
+        For i = 1 To shp.GroupItems.Count
+            cnt = cnt + ProcessShapeRecursive(shp.GroupItems(i))
+        Next i
+        ProcessShapeRecursive = cnt
+        Exit Function
+    End If
+
+    ' 2) Обычный текст
+    If shp.HasTextFrame Then
+        If shp.TextFrame.HasText Then
+            cnt = cnt + DeleteStrikeInRange2(shp.TextFrame2.TextRange)
+        End If
+    End If
+
+    ' 3) Таблицы
+    If shp.HasTable Then
+        Dim r As Long, c As Long
+        For r = 1 To shp.Table.Rows.Count
+            For c = 1 To shp.Table.Columns.Count
+                With shp.Table.Cell(r, c).Shape
+                    If .HasTextFrame Then
+                        If .TextFrame.HasText Then
+                            cnt = cnt + DeleteStrikeInRange2(.TextFrame2.TextRange)
+                        End If
+                    End If
+                End With
+            Next c
+        Next r
+    End If
+
+    ' 4) SmartArt
+    If shp.HasSmartArt Then
+        Dim node As SmartArtNode
+        For Each node In shp.SmartArt.AllNodes
+            cnt = cnt + DeleteStrikeInRange2(node.TextFrame2.TextRange)
+        Next node
+    End If
+
+    ProcessShapeRecursive = cnt
+End Function
+
+Private Function DeleteStrikeInRange2(ByVal tr As TextRange2) As Long
+    Dim i As Long
+    Dim cnt As Long
+
+    If tr Is Nothing Then Exit Function
+    If tr.Length <= 0 Then Exit Function
+
+    ' Идем с конца, чтобы индексы не съезжали
+    For i = tr.Length To 1 Step -1
+        ' msoFalse = 0, msoTrue = -1, msoTriStateMixed = -2
+        If tr.Characters(i, 1).Font.Strikethrough <> msoFalse Then
+            tr.Characters(i, 1).Delete
+            cnt = cnt + 1
+        End If
+    Next i
+
+    DeleteStrikeInRange2 = cnt
+End Function
