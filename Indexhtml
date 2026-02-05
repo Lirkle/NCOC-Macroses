@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2D Floor Planner Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">2D Planner Pro</div>
+
+    <div class="tools">
+      <div class="group">
+        <button class="btn tool active" data-tool="select">Выбор</button>
+        <button class="btn tool" data-tool="wall">Стена</button>
+        <button class="btn tool" data-tool="door">Дверь</button>
+        <button class="btn tool" data-tool="window">Окно</button>
+        <button class="btn tool" data-tool="room">Комната</button>
+        <button class="btn tool" data-tool="furniture">Мебель</button>
+        <button class="btn tool" data-tool="dimension">Размер</button>
+      </div>
+
+      <div class="sep"></div>
+
+      <div class="group">
+        <button class="btn" id="undoBtn">Undo</button>
+        <button class="btn" id="redoBtn">Redo</button>
+        <button class="btn danger" id="delBtn">Удалить</button>
+        <button class="btn danger" id="clearBtn">Очистить</button>
+      </div>
+
+      <div class="sep"></div>
+
+      <div class="group">
+        <label class="check"><input type="checkbox" id="snapGrid" checked> Сетка</label>
+        <label class="check"><input type="checkbox" id="snapGeom" checked> Узлы</label>
+        <label class="check"><input type="checkbox" id="snapOrtho" checked> Орто</label>
+        <label class="check"><input type="checkbox" id="showDims" checked> Размеры</label>
+      </div>
+
+      <div class="sep"></div>
+
+      <div class="group">
+        <label class="field">Шаг сетки (см)
+          <input type="number" id="gridCm" min="5" max="200" step="5" value="50" />
+        </label>
+        <label class="field">Масштаб (px/м)
+          <input type="number" id="pxPerM" min="20" max="400" step="5" value="80" />
+        </label>
+      </div>
+
+      <div class="sep"></div>
+
+      <div class="group">
+        <button class="btn" id="saveBtn">Сохранить JSON</button>
+        <button class="btn" id="loadBtn">Загрузить JSON</button>
+        <input id="loadFile" type="file" accept="application/json" hidden />
+        <button class="btn" id="exportBtn">Экспорт PNG</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <aside class="panel">
+      <h3>Библиотека мебели</h3>
+      <div class="lib" id="lib"></div>
+
+      <h3>Свойства</h3>
+      <div class="props" id="props">
+        <div class="muted">Ничего не выбрано</div>
+      </div>
+
+      <h3>Слои</h3>
+      <div class="layers" id="layers"></div>
+
+      <div class="help muted">
+        <div><b>Пан</b>: Space + ЛКМ (или средняя кнопка)</div>
+        <div><b>Зум</b>: колесо (Shift = быстрее)</div>
+        <div><b>Привязка</b>: удерживай Alt чтобы временно отключить</div>
+        <div><b>Мультивыбор</b>: Shift + клик, рамка выделения ЛКМ по пустому</div>
+        <div><b>Копия</b>: Ctrl+C, вставка Ctrl+V</div>
+        <div><b>Дубликат</b>: Ctrl+D</div>
+        <div><b>Поворот мебели</b>: R, затем мышь или колесо</div>
+        <div><b>Точный ввод</b>: в свойствах (ширина, высота, длины)</div>
+      </div>
+
+      <div class="footer muted">
+        Автосейв: включен (localStorage)
+      </div>
+    </aside>
+
+    <section class="canvasWrap">
+      <canvas id="c" width="1600" height="1000"></canvas>
+      <div class="status" id="status">Готово</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
