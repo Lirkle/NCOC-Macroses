@@ -1,0 +1,1363 @@
+[gavrilow8888] ERROR: connect ETIMEDOUT 185.71.66.101:25565
+[gavrilow8888] CLIENT_ERROR: connect ETIMEDOUT 185.71.66.101:25565
+gavrilow8888 disconnected.
+[gavrilow8888] CLIENT_END
+[gavrilow8888] ERROR: connect ETIMEDOUT 185.71.66.101:25565
+[gavrilow8888] CLIENT_ERROR: connect ETIMEDOUT 185.71.66.101:25565
+gavrilow8888 disconnected.
+[gavrilow8888] CLIENT_END
+[gavrilow8888] ERROR: connect ETIMEDOUT 185.71.66.101:25565
+[gavrilow8888] CLIENT_ERROR: connect ETIMEDOUT 185.71.66.101:25565
+gavrilow8888 disconnected.
+[gavrilow8888] CLIENT_END
+[gavrilow8888] ERROR: connect ETIMEDOUT 185.71.66.101:25565
+[gavrilow8888] CLIENT_ERROR: connect ETIMEDOUT 185.71.66.101:25565
+gavrilow8888 disconnected.
+[gavrilow8888] CLIENT_END
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] SPAWN: in world
+[gavrilow8888] SERVER: Важно для вашей безопасности!!! Привяжите аккаунт к соц. сети командой: ▪ ВКонтакте - /2fa addvk ▪ Телеграм - /2fa addtg Для чего это нужно (Наведи мышкой)
+> [gavrilow8888] /p leave
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Party ▸ Создатель пати gavrilow8888 покинул его, пати сейчас будет расфомировано!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Party ▸ Пати расформировано.
+[gavrilow8888] WINS-LEADER: sent /party invite tg_dev00884
+[gavrilow8888] SERVER: Party ▸ Вы отправили приглашение игроку tg_dev00884
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd
+[gavrilow8888] SERVER: Party ▸ Вы отправили приглашение игроку MisterSoskatyuio
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz
+[MisterSoskatyuio, gavrilow8888] SERVER: Пати успешно создано! ↪ Создатель: gavrilow8888 ↪ Участники: MisterSoskatyuio ●, gavrilow8888 ● Используйте /party ник чтобы пригласить новых игроков!
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd
+[gavrilow8888] WINS-LEADER: party join confirmed -> ertyuiopsd.
+[gavrilow8888] SERVER: Party ▸ Вы отправили приглашение игроку ertyuiopsd
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888] SERVER: Party ▸ ertyuiopsd присоединился к пати
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434
+[gavrilow8888] WINS-LEADER: party join confirmed -> tg_dev00884.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888] SERVER: Party ▸ tg_dev00884 присоединился к пати
+[gavrilow8888] BW: sent join command
+[gavrilow8888] WINS-LEADER: party join confirmed -> shpiTTzz.
+[gavrilow8888] SERVER: Party ▸ Вы отправили приглашение игроку shpiTTzz
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, shpiTTzz] SERVER: Party ▸ shpiTTzz присоединился к пати
+[gavrilow8888] WINS-LEADER: party join confirmed -> shinshIIlkaa.
+[gavrilow8888] SERVER: Party ▸ Вы отправили приглашение игроку shinshIIlkaa
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, shinshIIlkaa, shpiTTzz] SERVER: Party ▸ shinshIIlkaa присоединился к пати
+[gavrilow8888] WINS-LEADER: party join confirmed -> sdfnsdnflksd.
+[gavrilow8888] SERVER: Party ▸ Вы отправили приглашение игроку sdfnsdnflksd
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Party ▸ sdfnsdnflksd присоединился к пати
+[gavrilow8888] WINS-LEADER: party join confirmed -> kakashka437434.
+[gavrilow8888] SERVER: Party ▸ Вы отправили приглашение игроку kakashka437434
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Party ▸ kakashka437434 присоединился к пати
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-3).
+[gavrilow8888] BW: in lobby = true (bw-lobby-3)
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-3).
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] SERVER: Подключение к bw-lobby-3...
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=11)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=17)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=2)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=5)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=bw-lobby-3
+[gavrilow8888] WINS-LEADER: solo guard armed (bw-lobby-3).
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=5/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=6/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=7/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=8/8
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[gavrilow8888, kakashka437434] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 3/8
+[gavrilow8888, kakashka437434, shpiTTzz] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 4/8
+[gavrilow8888, kakashka437434, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 5/8
+[gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 6/8
+[ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 8/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 2 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-4).
+[gavrilow8888] BW: in lobby = true (bw-lobby-4)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-4).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-4).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] LOGIN: connected
+[MisterSoskatyuio, gavrilow8888] SERVER: Подключение к bw-lobby-4...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=11)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=17)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=2)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=6)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=bw-lobby-4
+[gavrilow8888] WINS-LEADER: solo guard armed (bw-lobby-4).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=5/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=6/8
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=7/8
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=8/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 3/8
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 4/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 5/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 6/8
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 8/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 2 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-5).
+[gavrilow8888] BW: in lobby = true (bw-lobby-5)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-5).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-5).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=1, held="Wooden Sword" (name=wooden_sword, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): <empty>
+[gavrilow8888] WINS-LEADER: solo queue select failed. trigger=bw-lobby-5, error=blaze_powder_not_found_in_hotbar
+[gavrilow8888] WINS-LEADER: solo queue retry scheduled (blaze_powder_not_found_in_hotbar) in 2s.
+[gavrilow8888, shpiTTzz] SERVER: Подключение к bw-lobby-5...
+[gavrilow8888] LOGIN: connected
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ MisterSoskatyuio покинул игру
+[gavrilow8888, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ ertyuiopsd покинул игру
+[gavrilow8888, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ kakashka437434 покинул игру
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=4)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=10)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=2)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=3)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=solo-select-blaze_powder_not_found_in_hotbar-retry
+[gavrilow8888] WINS-LEADER: solo guard armed (solo-select-blaze_powder_not_found_in_hotbar-retry).
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=5/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=6/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=7/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=8/8
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[gavrilow8888, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 3/8
+[gavrilow8888, kakashka437434, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 4/8
+[MisterSoskatyuio, gavrilow8888, kakashka437434, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 5/8
+[MisterSoskatyuio, gavrilow8888, kakashka437434, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 6/8
+[MisterSoskatyuio, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 8/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 3 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-7).
+[gavrilow8888] BW: in lobby = true (bw-lobby-7)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-7).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-7).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=1, held="Wooden Sword" (name=wooden_sword, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): <empty>
+[gavrilow8888] WINS-LEADER: solo queue select failed. trigger=bw-lobby-7, error=blaze_powder_not_found_in_hotbar
+[gavrilow8888] WINS-LEADER: solo queue retry scheduled (blaze_powder_not_found_in_hotbar) in 2s.
+[gavrilow8888] SERVER: Подключение к bw-lobby-7...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] LOGIN: connected
+[gavrilow8888, kakashka437434] SERVER: BedWars ▸ shinshIIlkaa покинул игру
+[gavrilow8888, kakashka437434] SERVER: BedWars ▸ MisterSoskatyuio покинул игру
+[gavrilow8888, kakashka437434] SERVER: BedWars ▸ shpiTTzz покинул игру
+[gavrilow8888, kakashka437434] SERVER: BedWars ▸ sdfnsdnflksd покинул игру
+[gavrilow8888, kakashka437434] SERVER: BedWars ▸ ertyuiopsd покинул игру
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=11)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=10)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=14)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=2)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=4)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=solo-select-blaze_powder_not_found_in_hotbar-retry
+[gavrilow8888] WINS-LEADER: solo guard armed (solo-select-blaze_powder_not_found_in_hotbar-retry).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=5/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=6/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=7/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=8/8
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[gavrilow8888, kakashka437434] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 3/8
+[gavrilow8888, kakashka437434, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 4/8
+[gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 5/8
+[ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 6/8
+[ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 8/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 2 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-1).
+[gavrilow8888] BW: in lobby = true (bw-lobby-1)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-1).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-1).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888, shpiTTzz] SERVER: Подключение к bw-lobby-1...
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=1, held="Wooden Sword" (name=wooden_sword, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): <empty>
+[gavrilow8888] WINS-LEADER: solo queue select failed. trigger=bw-lobby-1, error=blaze_powder_not_found_in_hotbar
+[gavrilow8888] WINS-LEADER: solo queue retry scheduled (blaze_powder_not_found_in_hotbar) in 2s.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] LOGIN: connected
+[gavrilow8888, shpiTTzz] SERVER: BedWars ▸ kakashka437434 покинул игру
+[gavrilow8888, shpiTTzz] SERVER: BedWars ▸ sdfnsdnflksd покинул игру
+[gavrilow8888, shpiTTzz] SERVER: BedWars ▸ ertyuiopsd покинул игру
+[gavrilow8888, shpiTTzz] SERVER: BedWars ▸ MisterSoskatyuio покинул игру
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=5)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=23)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=9)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=6)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=solo-select-blaze_powder_not_found_in_hotbar-retry
+[gavrilow8888] WINS-LEADER: solo guard armed (solo-select-blaze_powder_not_found_in_hotbar-retry).
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=5/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=6/8
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=7/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=8/8
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[gavrilow8888, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 3/8
+[gavrilow8888, kakashka437434, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 4/8
+[gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 5/8
+[ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 6/8
+[ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 8/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 3 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-3).
+[gavrilow8888] BW: in lobby = true (bw-lobby-3)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-3).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-3).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=1, held="Wooden Sword" (name=wooden_sword, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): <empty>
+[gavrilow8888] WINS-LEADER: solo queue select failed. trigger=bw-lobby-3, error=blaze_powder_not_found_in_hotbar
+[gavrilow8888] WINS-LEADER: solo queue retry scheduled (blaze_powder_not_found_in_hotbar) in 2s.
+[gavrilow8888, shinshIIlkaa] SERVER: Подключение к bw-lobby-3...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=21)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=5)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=5)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=2)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=solo-select-blaze_powder_not_found_in_hotbar-retry
+[gavrilow8888] WINS-LEADER: solo guard armed (solo-select-blaze_powder_not_found_in_hotbar-retry).
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=5/8
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=6/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=7/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=8/8
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[MisterSoskatyuio, gavrilow8888] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 3/8
+[MisterSoskatyuio, gavrilow8888, sdfnsdnflksd] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 4/8
+[MisterSoskatyuio, gavrilow8888, sdfnsdnflksd, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 5/8
+[MisterSoskatyuio, gavrilow8888, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 6/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 8/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 2 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-4).
+[gavrilow8888] BW: in lobby = true (bw-lobby-4)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-4).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-4).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=1, held="Wooden Sword" (name=wooden_sword, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): <empty>
+[gavrilow8888] WINS-LEADER: solo queue select failed. trigger=bw-lobby-4, error=blaze_powder_not_found_in_hotbar
+[gavrilow8888] WINS-LEADER: solo queue retry scheduled (blaze_powder_not_found_in_hotbar) in 2s.
+[ertyuiopsd, gavrilow8888] SERVER: Подключение к bw-lobby-4...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=13)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=5)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=2)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=2)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=solo-select-blaze_powder_not_found_in_hotbar-retry
+[gavrilow8888] WINS-LEADER: solo guard armed (solo-select-blaze_powder_not_found_in_hotbar-retry).
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=5/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=6/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=7/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=8/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[gavrilow8888, shinshIIlkaa] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 3/8
+[gavrilow8888, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 4/8
+[ertyuiopsd, gavrilow8888, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 5/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 6/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 8/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 3 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-5).
+[gavrilow8888] BW: in lobby = true (bw-lobby-5)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-5).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-5).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=1, held="Wooden Sword" (name=wooden_sword, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): <empty>
+[gavrilow8888] WINS-LEADER: solo queue select failed. trigger=bw-lobby-5, error=blaze_powder_not_found_in_hotbar
+[gavrilow8888] WINS-LEADER: solo queue retry scheduled (blaze_powder_not_found_in_hotbar) in 2s.
+[ertyuiopsd, gavrilow8888] SERVER: Подключение к bw-lobby-5...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=15)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=2)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=2)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=5)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=solo-select-blaze_powder_not_found_in_hotbar-retry
+[gavrilow8888] WINS-LEADER: solo guard armed (solo-select-blaze_powder_not_found_in_hotbar-retry).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=5/8
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=6/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=7/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=8/8
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 3/8
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 4/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 5/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 6/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, sdfnsdnflksd, shpiTTzz] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, sdfnsdnflksd, shpiTTzz] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 8/8
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 2 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-6).
+[gavrilow8888] BW: in lobby = true (bw-lobby-6)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-6).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-6).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=1, held="Wooden Sword" (name=wooden_sword, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): <empty>
+[gavrilow8888] WINS-LEADER: solo queue select failed. trigger=bw-lobby-6, error=blaze_powder_not_found_in_hotbar
+[gavrilow8888] WINS-LEADER: solo queue retry scheduled (blaze_powder_not_found_in_hotbar) in 2s.
+[gavrilow8888, sdfnsdnflksd] SERVER: Подключение к bw-lobby-6...
+[gavrilow8888] LOGIN: connected
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=22)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=5)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=3)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=4)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=solo-select-blaze_powder_not_found_in_hotbar-retry
+[gavrilow8888] WINS-LEADER: solo guard armed (solo-select-blaze_powder_not_found_in_hotbar-retry).
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=5/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=6/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=7/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=8/8
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[gavrilow8888, kakashka437434] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 3/8
+[gavrilow8888, kakashka437434, shpiTTzz] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 4/8
+[gavrilow8888, kakashka437434, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 5/8
+[MisterSoskatyuio, gavrilow8888, kakashka437434, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 6/8
+[MisterSoskatyuio, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 8/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 2 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-1).
+[gavrilow8888] BW: in lobby = true (bw-lobby-1)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-1).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-1).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=1, held="Wooden Sword" (name=wooden_sword, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): <empty>
+[gavrilow8888] WINS-LEADER: solo queue select failed. trigger=bw-lobby-1, error=blaze_powder_not_found_in_hotbar
+[gavrilow8888] WINS-LEADER: solo queue retry scheduled (blaze_powder_not_found_in_hotbar) in 2s.
+[ertyuiopsd, gavrilow8888] SERVER: Подключение к bw-lobby-1...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] LOGIN: connected
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888] SERVER: BedWars ▸ kakashka437434 покинул игру
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888] SERVER: BedWars ▸ shpiTTzz покинул игру
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888] SERVER: BedWars ▸ shinshIIlkaa покинул игру
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888] SERVER: BedWars ▸ sdfnsdnflksd покинул игру
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=7)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=solo-select-blaze_powder_not_found_in_hotbar-retry
+[gavrilow8888] WINS-LEADER: solo guard armed (solo-select-blaze_powder_not_found_in_hotbar-retry).
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] WINS-LEADER: pregame join -> MisterSoskatyuio; tracked=3/8
+[gavrilow8888] WINS-LEADER: pregame join -> sdfnsdnflksd; tracked=4/8
+[gavrilow8888] WINS-LEADER: pregame join -> ertyuiopsd; tracked=5/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] WINS-LEADER: pregame join -> kakashka437434; tracked=6/8
+[gavrilow8888] WINS-LEADER: pregame join -> shpiTTzz; tracked=7/8
+[gavrilow8888] WINS-LEADER: pregame join -> shinshIIlkaa; tracked=8/8
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[MisterSoskatyuio, gavrilow8888] SERVER: BedWars ▸ [Игрок] MisterSoskatyuio подключился к игре 3/8
+[MisterSoskatyuio, gavrilow8888, sdfnsdnflksd] SERVER: BedWars ▸ [Игрок] sdfnsdnflksd подключился к игре 4/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, sdfnsdnflksd] SERVER: BedWars ▸ [Игрок] ertyuiopsd подключился к игре 5/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd] SERVER: BedWars ▸ [Игрок] kakashka437434 подключился к игре 6/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shpiTTzz] SERVER: BedWars ▸ [Игрок] shpiTTzz подключился к игре 7/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ [Игрок] shinshIIlkaa подключился к игре 8/8
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 3 секунд..."
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-2).
+[gavrilow8888] BW: in lobby = true (bw-lobby-2)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-2).
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-2).
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Защити свою кровать и сломай чужие кровати.
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Покупай предметы и улучшения для своей команды за
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Победит только одна, сильнейшая команда!
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: Вы играете на mc.MineBlaze.net
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=1, held="Wooden Sword" (name=wooden_sword, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Wooden Sword" (name=wooden_sword, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): <empty>
+[gavrilow8888] WINS-LEADER: solo queue select failed. trigger=bw-lobby-2, error=blaze_powder_not_found_in_hotbar
+[gavrilow8888] WINS-LEADER: solo queue retry scheduled (blaze_powder_not_found_in_hotbar) in 2s.
+[gavrilow8888, sdfnsdnflksd] SERVER: Подключение к bw-lobby-2...
+[MisterSoskatyuio, ertyuiopsd, gavrilow8888, kakashka437434, sdfnsdnflksd, shinshIIlkaa, shpiTTzz] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] SERVER: BedWars ▸ MisterSoskatyuio покинул игру
+[gavrilow8888] SERVER: BedWars ▸ ertyuiopsd покинул игру
+[gavrilow8888] SERVER: BedWars ▸ kakashka437434 покинул игру
+[gavrilow8888] WINS-LEADER: sent /party invite MisterSoskatyuio (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shinshIIlkaa (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite kakashka437434 (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite ertyuiopsd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite sdfnsdnflksd (wins-login)
+[gavrilow8888] WINS-LEADER: sent /party invite shpiTTzz (wins-login)
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: pregame roster cleared (before-solo-select).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] WINS-LEADER: selector tried -> #1:blaze_powder
+[gavrilow8888] WINS-LEADER: screen after blaze RMB -> title="{"extra":[{"underlined":true,"text":"Обновление!"}],"text":"BedWars - "}", items=9
+[gavrilow8888] WINS-LEADER: gui slot 10: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 12: "Lime Stained Glass" (name=lime_stained_glass, count=3)
+[gavrilow8888] WINS-LEADER: gui slot 13: "Lime Stained Glass" (name=lime_stained_glass, count=4)
+[gavrilow8888] WINS-LEADER: gui slot 14: "Lime Stained Glass" (name=lime_stained_glass, count=6)
+[gavrilow8888] WINS-LEADER: gui slot 15: "Lime Stained Glass" (name=lime_stained_glass, count=3)
+[gavrilow8888] WINS-LEADER: gui slot 16: "Lime Stained Glass" (name=lime_stained_glass, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: category click method -> chest-icon
+[gavrilow8888] WINS-LEADER: category screen -> title="{"extra":[{"underlined":true,"text":"Категории"}],"text":"BedWars - "}", items=7
+[gavrilow8888] WINS-LEADER: gui2 slot 10: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 11: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 12: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 13: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 14: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 15: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 slot 16: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui2 chest fallback click -> slot=10, method=preferred-slot
+[gavrilow8888] WINS-LEADER: third screen -> title="{"extra":[{"underlined":true,"text":"1v8"}],"text":"BedWars - "}", items=5
+[gavrilow8888] WINS-LEADER: gui3 slot 12: "Red Bed" (name=red_bed, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 14: "Oak Sign" (name=oak_sign, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 27: "Chest" (name=chest, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 28: "Nether Star" (name=nether_star, count=1)
+[gavrilow8888] WINS-LEADER: gui3 slot 35: "Ender Pearl" (name=ender_pearl, count=1)
+[gavrilow8888] WINS-LEADER: start click -> method=red-bed, slot=12
+[gavrilow8888] WINS-LEADER: inventory snapshot -> total=5, held="Blaze Powder" (name=blaze_powder, slot=36)
+[gavrilow8888] WINS-LEADER: inv slot 36 [hotbar 1]: "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 38 [hotbar 3]: "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 42 [hotbar 7]: "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 43 [hotbar 8]: "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: inv slot 44 [hotbar 9]: "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 1 (slot 36): "Blaze Powder" (name=blaze_powder, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 2 (slot 37): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 3 (slot 38): "Diamond" (name=diamond, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 4 (slot 39): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 5 (slot 40): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 6 (slot 41): <empty>
+[gavrilow8888] WINS-LEADER: hotbar hotbar 7 (slot 42): "Lime Dye" (name=lime_dye, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 8 (slot 43): "Slimeball" (name=slime_ball, count=1)
+[gavrilow8888] WINS-LEADER: hotbar hotbar 9 (slot 44): "Glistering Melon Slice" (name=glistering_melon_slice, count=1)
+[gavrilow8888] WINS-LEADER: solo queue selected (BedWars - 1v8). trigger=solo-select-blaze_powder_not_found_in_hotbar-retry
+[gavrilow8888] WINS-LEADER: solo guard armed (solo-select-blaze_powder_not_found_in_hotbar-retry).
+[gavrilow8888] SERVER: Party ▸ Игрок уже состоит в пати!
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] WINS-LEADER: pregame join -> gavrilow8888; tracked=1/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] gavrilow8888 подключился к игре 1/8
+[gavrilow8888] WINS-LEADER: pregame join -> tg_dev00884; tracked=2/8
+[gavrilow8888] SERVER: BedWars ▸ Вам автоматически выбрана команда Красные
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] tg_dev00884 подключился к игре 2/8
+[gavrilow8888] WINS-LEADER: sent /party chat не хватает игрока "sdfnsdnflksd"
+[gavrilow8888] WINS-LEADER: sent /party chat не хватает игрока "shpiTTzz"
+[gavrilow8888] WINS-LEADER: sent /party chat не хватает игрока "MisterSoskatyuio"
+[gavrilow8888] WINS-LEADER: sent /party chat не хватает игрока "kakashka437434"
+[gavrilow8888] WINS-LEADER: sent /party chat не хватает игрока "shinshIIlkaa"
+[gavrilow8888] WINS-LEADER: sent /party chat не хватает игрока "ertyuiopsd"
+[gavrilow8888] SERVER: Party ▸ gavrilow8888 пишет: не хватает игрока "sdfnsdnflksd"
+[gavrilow8888] SERVER: Party ▸ gavrilow8888 пишет: не хватает игрока "shpiTTzz"
+[gavrilow8888] SERVER: Party ▸ gavrilow8888 пишет: не хватает игрока "MisterSoskatyuio"
+[gavrilow8888] SERVER: Party ▸ gavrilow8888 пишет: не хватает игрока "kakashka437434"
+[gavrilow8888] SERVER: Party ▸ gavrilow8888 пишет: не хватает игрока "shinshIIlkaa"
+[gavrilow8888] SERVER: Party ▸ gavrilow8888 пишет: не хватает игрока "ertyuiopsd"
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] xuysosidebil подключился к игре 3/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] MindOfShino подключился к игре 4/8
+[gavrilow8888] SERVER: BedWars ▸ [Игрок] nkdfmhgihhhndhr подключился к игре 5/8
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 15 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ До старта осталось 15 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 10 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ До старта осталось 10 секунд...
+[gavrilow8888] SERVER: [Игрок] xuysosidebil → ERTAF14 НИЩИЙ
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 5 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ До старта осталось 5 секунд...
+[gavrilow8888] SERVER: BedWars ▸ До старта осталось 4 секунд...
+[gavrilow8888] BW: countdown detected. msg="BedWars ▸ До старта осталось 3 секунд..."
+[gavrilow8888] SERVER: BedWars ▸ До старта осталось 3 секунд...
+[gavrilow8888] SERVER: BedWars ▸ До старта осталось 2 секунд...
+[gavrilow8888] SERVER: BedWars ▸ До старта осталось 1 секунд...
+[gavrilow8888] BW: wins mode -> /leave on match start.
+[gavrilow8888] WINS-LEADER: pregame roster cleared (after-match-start-leave).
+[gavrilow8888] WINS-LEADER: pregame roster cleared (bw-lobby-3).
+[gavrilow8888] BW: in lobby = true (bw-lobby-3)
+[gavrilow8888] BW: leave confirmed -> lobby sequence complete (bw-lobby-3).
+[gavrilow8888] WINS-LEADER: skip solo select (bw-lobby-3) - wins runtime is paused.
+[gavrilow8888] BW: lobby confirmed by connect line (bw-lobby-3).
+[gavrilow8888] SERVER: КРОВАТНЫЕ ВОЙНЫ
+[gavrilow8888] SERVER: Защити свою кровать и сломай чужие кровати.
+[gavrilow8888] SERVER: Покупай предметы и улучшения для своей команды за
+[gavrilow8888] SERVER: Железо, Золото, Алмазы и Изумруды чтобы стать несокрушимыми!
+[gavrilow8888] SERVER: Победит только одна, сильнейшая команда!
+[gavrilow8888] SERVER: Вы играете на mc.MineBlaze.net
+[gavrilow8888] SERVER: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] SERVER: Подключение к bw-lobby-3...
+[gavrilow8888] SERVER: BedWars ▸ Телепортация в лобби....
+[gavrilow8888] SERVER: ■ Хотите быть вкурсе всех новостей? Вступай в наш Telegram: mineblaze.net/telegram
+[gavrilow8888] SERVER: › Игрок [LEGEND] KamDanSo_03 решил забежать на чашечку чая
+[gavrilow8888] SERVER: ■ Покупай привилегии на нашем сайте: www.mineblaze.net
+[gavrilow8888] LOGIN: connected
+[gavrilow8888] SERVER: | Ты перемещен в лобби ▸ Извините, но вас кикнули За АФК Зайдите на сервер выживания!
+[gavrilow8888] SERVER: ■ Не знаете какие возможности есть у доната? ■ Так напишите команду /donate и развлекайтесь ■ Покупка доната на сайте: www.mineblaze.net
+[gavrilow8888] SERVER: Party ▸ Игрок shinshIIlkaa кикнут из пати поскольку он оффлайн больше 5 минут
+[gavrilow8888] SERVER: Party ▸ Игрок kakashka437434 кикнут из пати поскольку он оффлайн больше 5 минут
+[gavrilow8888] SERVER: Party ▸ Игрок sdfnsdnflksd кикнут из пати поскольку он оффлайн больше 5 минут
+[gavrilow8888] SERVER: Party ▸ Игрок MisterSoskatyuio кикнут из пати поскольку он оффлайн больше 5 минут
+[gavrilow8888] SERVER: Party ▸ Игрок ertyuiopsd кикнут из пати поскольку он оффлайн больше 5 минут
+[gavrilow8888] SERVER: Party ▸ Игрок shpiTTzz кикнут из пати поскольку он оффлайн больше 5 минут
+[gavrilow8888] SERVER: ■ Хотите купить донат, но сомневаетесь? ■ Не бойтесь, мы не обманываем. Покупайте! ■ Покупка доната на сайте: www.mineblaze.net
+[gavrilow8888] SERVER: ■ Хотите быть первым вкурсе всех новостей сервера? ■ Подпишитесь и вступайте в наше сообщество! ■ Кликните, чтобы перейти - vk.com/mine_blaze
+[gavrilow8888] SERVER: ■ Помогите нам улучшить сервер ■ Ответьте на несколько вопросов www.mineblaze.net/feedback
+[gavrilow8888] SERVER: ■ Хотите быть первым вкурсе всех новостей сервера? ■ Вступайте в наш официальный Discord! ■ Кликните, чтобы перейти - www.mineblaze.net/discord
+[gavrilow8888] SERVER: ■ Хотите быть первым вкурсе всех новостей сервера? ■ Вступайте в наш официальный Telegram! ■ Кликните, чтобы перейти - www.mineblaze.net/telegram
+[gavrilow8888] SERVER: ■ Не знаете какие возможности есть у доната? ■ Так напишите команду /donate и развлекайтесь ■ Покупка доната на сайте: www.mineblaze.net
+[gavrilow8888] SERVER: ■ Хотите купить донат, но сомневаетесь? ■ Не бойтесь, мы не обманываем. Покупайте! ■ Покупка доната на сайте: www.mineblaze.net
+[gavrilow8888] SERVER: ■ Хотите быть первым вкурсе всех новостей сервера? ■ Подпишитесь и вступайте в наше сообщество! ■ Кликните, чтобы перейти - vk.com/mine_blaze
+[gavrilow8888] SERVER: ■ Помогите нам улучшить сервер ■ Ответьте на несколько вопросов www.mineblaze.net/feedback
+[gavrilow8888] SERVER: ■ Хотите быть первым вкурсе всех новостей сервера? ■ Вступайте в наш официальный Discord! ■ Кликните, чтобы перейти - www.mineblaze.net/discord
+[gavrilow8888] SERVER: ■ Хотите быть первым вкурсе всех новостей сервера? ■ Вступайте в наш официальный Telegram! ■ Кликните, чтобы перейти - www.mineblaze.net/telegram
+[gavrilow8888] SERVER: ■ Не знаете какие возможности есть у доната? ■ Так напишите команду /donate и развлекайтесь ■ Покупка доната на сайте: www.mineblaze.net
+[gavrilow8888] SERVER: ■ Хотите купить донат, но сомневаетесь? ■ Не бойтесь, мы не обманываем. Покупайте! ■ Покупка доната на сайте: www.mineblaze.net
