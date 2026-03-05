@@ -388,19 +388,19 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
     Dim totalW As Double
     totalW = maxN * boxW + (maxN - 1) * gapX
     If totalW > availW And totalW > 0 Then
-        Dim sW As Double
-        sW = availW / totalW
-        boxW = boxW * sW
-        gapX = gapX * sW
+        Dim scaleW As Double
+        scaleW = availW / totalW
+        boxW = boxW * scaleW
+        gapX = gapX * scaleW
     End If
 
     Dim totalH As Double
     totalH = maxLevel * boxH + (maxLevel - 1) * gapY
     If totalH > availH And totalH > 0 Then
-        Dim sH As Double
-        sH = availH / totalH
-        boxH = boxH * sH
-        gapY = gapY * sH
+        Dim scaleH As Double
+        scaleH = availH / totalH
+        boxH = boxH * scaleH
+        gapY = gapY * scaleH
     End If
 
     Dim fontBase As Double
