@@ -355,89 +355,92 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
     Dim maxLevel As Long
     maxLevel = 1
 
-    Dim maxN As Long
-    maxN = 1
-
     Dim k As Variant
     For Each k In levels.Keys
         Dim lvKey As Long
         lvKey = CLng(k)
         If lvKey > maxLevel Then maxLevel = lvKey
-        If levels(k).Count > maxN Then maxN = levels(k).Count
     Next k
 
     Dim marginX As Double: marginX = 24
     Dim topY As Double: topY = 46
     Dim bottomMargin As Double: bottomMargin = 20
-    Dim gapX As Double: gapX = 12
-    Dim gapY As Double: gapY = 20
-
-    If maxN > 20 Then
-        gapX = 4
-    ElseIf maxN > 12 Then
-        gapX = 8
-    End If
-
-    If maxLevel > 4 Then gapY = 14
+    Dim gapX As Double: gapX = 10
+    Dim gapY As Double: gapY = 14
+    Dim minBoxW As Double: minBoxW = 78
 
     Dim availW As Double: availW = SW - 2 * marginX
     Dim availH As Double: availH = SH - topY - bottomMargin
 
-    Dim boxW As Double
-    boxW = (availW - (maxN - 1) * gapX) / maxN
-    If boxW > 220 Then boxW = 220
-    If boxW < 85 Then boxW = 85
+    Dim maxPerRow As Long
+    maxPerRow = CLng((availW + gapX) \ (minBoxW + gapX))
+    If maxPerRow < 5 Then maxPerRow = 5
+    If maxPerRow > 14 Then maxPerRow = 14
+
+    Dim rowBatches As New Collection
+    Dim levelIndex As Long
+    For levelIndex = 1 To maxLevel
+        If levels.Exists(CStr(levelIndex)) Then
+            Dim nodes As Collection
+            Set nodes = SortRowsByParentAndName_OneSlide60(ws, levels(CStr(levelIndex)), parentOf)
+
+            Dim startIdx As Long
+            startIdx = 1
+
+            Do While startIdx <= nodes.Count
+                Dim takeN As Long
+                takeN = maxPerRow
+                If startIdx + takeN - 1 > nodes.Count Then
+                    takeN = nodes.Count - startIdx + 1
+                End If
+
+                rowBatches.Add SliceCollection(nodes, startIdx, takeN)
+                startIdx = startIdx + takeN
+            Loop
+        End If
+    Next levelIndex
+
+    If rowBatches.Count = 0 Then Exit Sub
+
+    Dim totalRows As Long
+    totalRows = rowBatches.Count
+
+    If totalRows <= 3 Then
+        gapY = 18
+    ElseIf totalRows >= 7 Then
+        gapY = 10
+    End If
 
     Dim boxH As Double
-    boxH = (availH - (maxLevel - 1) * gapY) / maxLevel
-    If boxH > 72 Then boxH = 72
-    If boxH < 34 Then boxH = 34
-
-    Dim totalW As Double
-    totalW = maxN * boxW + (maxN - 1) * gapX
-    If totalW > availW And totalW > 0 Then
-        Dim scaleW As Double
-        scaleW = availW / totalW
-        boxW = boxW * scaleW
-        gapX = gapX * scaleW
-    End If
-
-    Dim totalH As Double
-    totalH = maxLevel * boxH + (maxLevel - 1) * gapY
-    If totalH > availH And totalH > 0 Then
-        Dim scaleH As Double
-        scaleH = availH / totalH
-        boxH = boxH * scaleH
-        gapY = gapY * scaleH
-    End If
+    boxH = (availH - (totalRows - 1) * gapY) / totalRows
+    If boxH > 66 Then boxH = 66
+    If boxH < 26 Then boxH = 26
 
     Dim compactMode As Boolean
-    compactMode = (boxW < 95 Or maxN > 12)
+    compactMode = (maxPerRow <= 10)
 
     Dim fontBase As Double
-    If compactMode Then
-        fontBase = boxH * 0.38
-        If fontBase < 6 Then fontBase = 6
-        If fontBase > 10 Then fontBase = 10
-    Else
-        fontBase = boxH * 0.22
-        If fontBase < 7 Then fontBase = 7
-        If fontBase > 12 Then fontBase = 12
-    End If
+    fontBase = boxH * 0.34
+    If fontBase < 6 Then fontBase = 6
+    If fontBase > 10 Then fontBase = 10
+    If Not compactMode And fontBase < 7 Then fontBase = 7
 
     Dim shapeOf As Object
     Set shapeOf = CreateObject("Scripting.Dictionary")
 
-    Dim levelIndex As Long
-    For levelIndex = 1 To maxLevel
-        If Not levels.Exists(CStr(levelIndex)) Then GoTo NextLevelDraw
-
-        Dim nodes As Collection
-        Set nodes = SortRowsByParentAndName_OneSlide60(ws, levels(CStr(levelIndex)), parentOf)
+    Dim rowIndex As Long
+    For rowIndex = 1 To rowBatches.Count
+        Dim nodesRow As Collection
+        Set nodesRow = rowBatches(rowIndex)
 
         Dim countN As Long
-        countN = nodes.Count
-        If countN < 1 Then GoTo NextLevelDraw
+        countN = nodesRow.Count
+        If countN < 1 Then GoTo NextRowDraw
+
+        Dim boxW As Double
+        boxW = (availW - (countN - 1) * gapX) / countN
+        If boxW > 220 Then boxW = 220
+        If boxW < 48 Then boxW = 48
 
         Dim rowW As Double
         rowW = countN * boxW + (countN - 1) * gapX
@@ -446,10 +449,13 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
         startX = (SW - rowW) / 2 + boxW / 2
 
         Dim y As Double
-        y = topY + (levelIndex - 1) * (boxH + gapY)
+        y = topY + (rowIndex - 1) * (boxH + gapY)
+
+        Dim rowCompact As Boolean
+        rowCompact = compactMode Or (boxW < 110)
 
         For i = 1 To countN
-            rowId = CLng(nodes(i))
+            rowId = CLng(nodesRow(i))
 
             Dim cx As Double
             cx = startX + (i - 1) * (boxW + gapX)
@@ -458,13 +464,13 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
             Dim shpKey As String
             shpKey = CStr(rowId)
 
-            Set shp = DrawSimpleBox_OneSlide60(sld, ws, rowId, cx, y, boxW, boxH, fontBase, compactMode)
+            Set shp = DrawSimpleBox_OneSlide60(sld, ws, rowId, cx, y, boxW, boxH, fontBase, rowCompact)
             If shapeOf.Exists(shpKey) Then shapeOf.Remove shpKey
             shapeOf.Add shpKey, shp
         Next i
 
-NextLevelDraw:
-    Next levelIndex
+NextRowDraw:
+    Next rowIndex
 
     Dim parentKeys As Variant
     parentKeys = SortedDictionaryKeys(childrenOf)
@@ -481,7 +487,6 @@ NextLevelDraw:
             Dim childRows As Collection
             Set childRows = SortRowsByName(ws, childrenOf(pidKey))
 
-            Dim childShapes As New Collection
             Dim j As Long
             For j = 1 To childRows.Count
                 Dim childId As Long
@@ -489,17 +494,9 @@ NextLevelDraw:
                 If shapeOf.Exists(CStr(childId)) Then
                     Dim childShape As Object
                     Set childShape = shapeOf(CStr(childId))
-                    childShapes.Add childShape
+                    DrawSimpleConnector_OneSlide60 sld, parentShape, childShape
                 End If
             Next j
-
-            If childShapes.Count = 1 Then
-                Dim firstChild As Object
-                Set firstChild = childShapes(1)
-                DrawSimpleConnector_OneSlide60 sld, parentShape, firstChild
-            ElseIf childShapes.Count > 1 Then
-                DrawParentBus_OneSlide60 sld, parentShape, childShapes
-            End If
 
 NextParent:
         Next i
@@ -528,14 +525,18 @@ Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal 
         .WordWrap = msoFalse
     End With
 
+    Dim charsPerLine As Long
+    charsPerLine = CLng((boxW - 6) / (fontSize * 0.62))
+    If charsPerLine < 6 Then charsPerLine = 6
+
     Dim txt As String
     If compactMode Then
-        txt = Ellipsize_OneSlide60(nm, 22)
+        txt = Ellipsize_OneSlide60(nm, charsPerLine)
     Else
         If pos = "" Then
-            txt = Ellipsize_OneSlide60(nm, 34)
+            txt = Ellipsize_OneSlide60(nm, charsPerLine)
         Else
-            txt = Ellipsize_OneSlide60(pos, 28) & vbCrLf & Ellipsize_OneSlide60(nm, 24)
+            txt = Ellipsize_OneSlide60(pos, charsPerLine) & vbCrLf & Ellipsize_OneSlide60(nm, charsPerLine)
             box.TextFrame.WordWrap = msoTrue
         End If
     End If
