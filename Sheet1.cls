@@ -55,7 +55,7 @@ Public Sub BuildOrgChart_OneSlide60_V31()
         Err.Raise vbObjectError + 2000, "BuildOrgChart_OneSlide60_V31", "PowerPoint could not be started."
     End If
 
-    DrawOneSlideOrgChartForGroup_V34 ws, pres, rowsOneSlide, "Org chart | Single slide"
+    DrawOneSlideHierarchy_OneSlide60 ws, pres, rowsOneSlide, "Org chart | Single slide"
 
     MsgBox "One-slide hierarchy export finished: " & CStr(pres.Slides.Count) & " slide(s).", vbInformation, "One-Slide Export"
     Exit Sub
@@ -247,6 +247,363 @@ Private Sub AddTitle_OneSlide60_V31(sld As Object, ByVal txt As String, ByVal sl
 
     t.Line.Visible = msoFalse
     t.Fill.Visible = msoFalse
+End Sub
+
+Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, rows As Collection, ByVal titleText As String)
+    Dim sld As Object
+    Set sld = pres.Slides.Add(pres.Slides.Count + 1, ppLayoutBlank)
+
+    Dim SW As Double, SH As Double
+    SW = pres.PageSetup.SlideWidth
+    SH = pres.PageSetup.SlideHeight
+
+    AddTitle_OneSlide60_V31 sld, titleText & " (" & CStr(rows.Count) & ")", SW, 28
+
+    Dim nameToId As Object
+    Set nameToId = CreateObject("Scripting.Dictionary")
+
+    Dim i As Long
+    For i = 1 To rows.Count
+        Dim rowId As Long
+        rowId = CLng(rows(i))
+
+        Dim nm As String
+        nm = CanonKey(ws.Cells(rowId, COL_NAME).Value)
+        If nm <> "" Then
+            If Not nameToId.Exists(nm) Then nameToId.Add nm, rowId
+        End If
+    Next i
+
+    Dim parentOf As Object
+    Set parentOf = CreateObject("Scripting.Dictionary")
+
+    Dim childrenOf As Object
+    Set childrenOf = CreateObject("Scripting.Dictionary")
+
+    For i = 1 To rows.Count
+        rowId = CLng(rows(i))
+
+        Dim mgrKey As String
+        mgrKey = CanonKey(ws.Cells(rowId, COL_MANAGER).Value)
+
+        If mgrKey <> "" And nameToId.Exists(mgrKey) Then
+            Dim mgrId As Long
+            mgrId = CLng(nameToId(mgrKey))
+            If mgrId <> rowId Then
+                parentOf(CStr(rowId)) = mgrId
+                If Not childrenOf.Exists(CStr(mgrId)) Then childrenOf.Add CStr(mgrId), New Collection
+                childrenOf(CStr(mgrId)).Add rowId
+            Else
+                parentOf(CStr(rowId)) = 0
+            End If
+        Else
+            parentOf(CStr(rowId)) = 0
+        End If
+    Next i
+
+    Dim roots As New Collection
+    For i = 1 To rows.Count
+        rowId = CLng(rows(i))
+        If CLng(parentOf(CStr(rowId))) = 0 Then roots.Add rowId
+    Next i
+    If roots.Count = 0 Then roots.Add CLng(rows(1))
+
+    Dim levelOf As Object
+    Set levelOf = CreateObject("Scripting.Dictionary")
+
+    Dim levels As Object
+    Set levels = CreateObject("Scripting.Dictionary")
+
+    Dim q As New Collection
+    For i = 1 To roots.Count
+        rowId = CLng(roots(i))
+        levelOf(CStr(rowId)) = 1
+        q.Add rowId
+    Next i
+
+    Do While q.Count > 0
+        Dim cur As Long
+        cur = CLng(q(1))
+        q.Remove 1
+
+        Dim lv As Long
+        lv = CLng(levelOf(CStr(cur)))
+
+        If Not levels.Exists(CStr(lv)) Then levels.Add CStr(lv), New Collection
+        levels(CStr(lv)).Add cur
+
+        If childrenOf.Exists(CStr(cur)) Then
+            Dim c As Variant
+            For Each c In childrenOf(CStr(cur))
+                If Not levelOf.Exists(CStr(c)) Then
+                    levelOf(CStr(c)) = lv + 1
+                    q.Add CLng(c)
+                End If
+            Next c
+        End If
+    Loop
+
+    For i = 1 To rows.Count
+        rowId = CLng(rows(i))
+        If Not levelOf.Exists(CStr(rowId)) Then
+            levelOf(CStr(rowId)) = 1
+            If Not levels.Exists("1") Then levels.Add "1", New Collection
+            levels("1").Add rowId
+        End If
+    Next i
+
+    Dim maxLevel As Long
+    maxLevel = 1
+
+    Dim maxN As Long
+    maxN = 1
+
+    Dim k As Variant
+    For Each k In levels.Keys
+        Dim lvKey As Long
+        lvKey = CLng(k)
+        If lvKey > maxLevel Then maxLevel = lvKey
+        If levels(k).Count > maxN Then maxN = levels(k).Count
+    Next k
+
+    Dim marginX As Double: marginX = 24
+    Dim topY As Double: topY = 46
+    Dim bottomMargin As Double: bottomMargin = 20
+    Dim gapX As Double: gapX = 12
+    Dim gapY As Double: gapY = 20
+
+    Dim availW As Double: availW = SW - 2 * marginX
+    Dim availH As Double: availH = SH - topY - bottomMargin
+
+    Dim boxW As Double
+    boxW = (availW - (maxN - 1) * gapX) / maxN
+    If boxW > 220 Then boxW = 220
+    If boxW < 85 Then boxW = 85
+
+    Dim boxH As Double
+    boxH = (availH - (maxLevel - 1) * gapY) / maxLevel
+    If boxH > 72 Then boxH = 72
+    If boxH < 34 Then boxH = 34
+
+    Dim totalW As Double
+    totalW = maxN * boxW + (maxN - 1) * gapX
+    If totalW > availW And totalW > 0 Then
+        Dim sW As Double
+        sW = availW / totalW
+        boxW = boxW * sW
+        gapX = gapX * sW
+    End If
+
+    Dim totalH As Double
+    totalH = maxLevel * boxH + (maxLevel - 1) * gapY
+    If totalH > availH And totalH > 0 Then
+        Dim sH As Double
+        sH = availH / totalH
+        boxH = boxH * sH
+        gapY = gapY * sH
+    End If
+
+    Dim fontBase As Double
+    fontBase = boxH * 0.22
+    If fontBase < 7 Then fontBase = 7
+    If fontBase > 12 Then fontBase = 12
+
+    Dim shapeOf As Object
+    Set shapeOf = CreateObject("Scripting.Dictionary")
+
+    Dim levelIndex As Long
+    For levelIndex = 1 To maxLevel
+        If Not levels.Exists(CStr(levelIndex)) Then GoTo NextLevelDraw
+
+        Dim nodes As Collection
+        Set nodes = SortRowsByName(ws, levels(CStr(levelIndex)))
+
+        Dim countN As Long
+        countN = nodes.Count
+        If countN < 1 Then GoTo NextLevelDraw
+
+        Dim rowW As Double
+        rowW = countN * boxW + (countN - 1) * gapX
+
+        Dim startX As Double
+        startX = (SW - rowW) / 2 + boxW / 2
+
+        Dim y As Double
+        y = topY + (levelIndex - 1) * (boxH + gapY)
+
+        For i = 1 To countN
+            rowId = CLng(nodes(i))
+
+            Dim cx As Double
+            cx = startX + (i - 1) * (boxW + gapX)
+
+            Dim shp As Object
+            Dim shpKey As String
+            shpKey = CStr(rowId)
+
+            Set shp = DrawSimpleBox_OneSlide60(sld, ws, rowId, cx, y, boxW, boxH, fontBase)
+            If shapeOf.Exists(shpKey) Then shapeOf.Remove shpKey
+            shapeOf.Add shpKey, shp
+        Next i
+
+NextLevelDraw:
+    Next levelIndex
+
+    Dim parentKeys As Variant
+    parentKeys = SortedDictionaryKeys(childrenOf)
+
+    If HasArrayItems(parentKeys) Then
+        For i = LBound(parentKeys) To UBound(parentKeys)
+            Dim pidKey As String
+            pidKey = CStr(parentKeys(i))
+            If Not shapeOf.Exists(pidKey) Then GoTo NextParent
+
+            Dim parentShape As Object
+            Set parentShape = shapeOf(pidKey)
+
+            Dim childRows As Collection
+            Set childRows = SortRowsByName(ws, childrenOf(pidKey))
+
+            Dim childShapes As New Collection
+            Dim j As Long
+            For j = 1 To childRows.Count
+                Dim childId As Long
+                childId = CLng(childRows(j))
+                If shapeOf.Exists(CStr(childId)) Then
+                    Dim childShape As Object
+                    Set childShape = shapeOf(CStr(childId))
+                    childShapes.Add childShape
+                End If
+            Next j
+
+            If childShapes.Count = 1 Then
+                Dim firstChild As Object
+                Set firstChild = childShapes(1)
+                DrawSimpleConnector_OneSlide60 sld, parentShape, firstChild
+            ElseIf childShapes.Count > 1 Then
+                DrawParentBus_OneSlide60 sld, parentShape, childShapes
+            End If
+
+NextParent:
+        Next i
+    End If
+End Sub
+
+Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal rowId As Long, ByVal cx As Double, ByVal y As Double, ByVal boxW As Double, ByVal boxH As Double, ByVal fontSize As Double) As Object
+    Dim box As Object
+    Set box = sld.Shapes.AddShape(msoShapeRectangle, cx - boxW / 2, y, boxW, boxH)
+
+    box.Fill.ForeColor.RGB = RGB(255, 255, 255)
+    box.Line.ForeColor.RGB = RGB(80, 80, 80)
+    box.Line.Weight = 0.75
+
+    Dim pos As String
+    pos = CleanText(ws.Cells(rowId, COL_POSITION).Value)
+
+    Dim nm As String
+    nm = CleanText(ws.Cells(rowId, COL_NAME).Value)
+
+    If pos = "" Then
+        box.TextFrame.TextRange.Text = nm
+    Else
+        box.TextFrame.TextRange.Text = pos & vbCrLf & nm
+    End If
+
+    With box.TextFrame.TextRange
+        .Font.Name = "Calibri"
+        .Font.Size = fontSize
+        .ParagraphFormat.Alignment = 2
+    End With
+
+    On Error Resume Next
+    If pos <> "" Then
+        box.TextFrame.TextRange.Paragraphs(1).Font.Color.RGB = RGB(40, 40, 40)
+        box.TextFrame.TextRange.Paragraphs(1).Font.Size = fontSize - 1
+        box.TextFrame.TextRange.Paragraphs(2).Font.Color.RGB = RGB(0, 112, 192)
+        box.TextFrame.TextRange.Paragraphs(2).Font.Bold = msoTrue
+    Else
+        box.TextFrame.TextRange.Paragraphs(1).Font.Color.RGB = RGB(0, 112, 192)
+        box.TextFrame.TextRange.Paragraphs(1).Font.Bold = msoTrue
+    End If
+    On Error GoTo 0
+
+    Set DrawSimpleBox_OneSlide60 = box
+End Function
+
+Private Sub DrawSimpleConnector_OneSlide60(sld As Object, parentBox As Object, childBox As Object)
+    Dim px As Double, py As Double, cx As Double, cy As Double
+    px = parentBox.Left + parentBox.Width / 2
+    py = parentBox.Top + parentBox.Height
+    cx = childBox.Left + childBox.Width / 2
+    cy = childBox.Top
+
+    Dim midY As Double
+    midY = (py + cy) / 2
+    If midY <= py + 1 Or midY >= cy - 1 Then
+        AddStyledLine_OneSlide60 sld, px, py, cx, cy
+    Else
+        AddStyledLine_OneSlide60 sld, px, py, px, midY
+        AddStyledLine_OneSlide60 sld, px, midY, cx, midY
+        AddStyledLine_OneSlide60 sld, cx, midY, cx, cy
+    End If
+End Sub
+
+Private Sub DrawParentBus_OneSlide60(sld As Object, parentBox As Object, childShapes As Collection)
+    Dim parentCX As Double
+    parentCX = parentBox.Left + parentBox.Width / 2
+
+    Dim parentBY As Double
+    parentBY = parentBox.Top + parentBox.Height
+
+    Dim minChildTop As Double
+    minChildTop = 1E+30
+
+    Dim minCX As Double
+    minCX = 1E+30
+
+    Dim maxCX As Double
+    maxCX = -1E+30
+
+    Dim i As Long
+    For i = 1 To childShapes.Count
+        Dim childBox As Object
+        Set childBox = childShapes(i)
+
+        Dim childCX As Double
+        childCX = childBox.Left + childBox.Width / 2
+
+        If childBox.Top < minChildTop Then minChildTop = childBox.Top
+        If childCX < minCX Then minCX = childCX
+        If childCX > maxCX Then maxCX = childCX
+    Next i
+
+    If minChildTop >= 1E+30 Then Exit Sub
+
+    Dim busY As Double
+    busY = parentBY + 12
+    If busY > minChildTop - 8 Then busY = (parentBY + (minChildTop - 8)) / 2
+    If busY <= parentBY + 2 Then busY = parentBY + 2
+
+    If parentCX < minCX Then minCX = parentCX
+    If parentCX > maxCX Then maxCX = parentCX
+
+    AddStyledLine_OneSlide60 sld, parentCX, parentBY, parentCX, busY
+    AddStyledLine_OneSlide60 sld, minCX, busY, maxCX, busY
+
+    For i = 1 To childShapes.Count
+        Set childBox = childShapes(i)
+        childCX = childBox.Left + childBox.Width / 2
+        AddStyledLine_OneSlide60 sld, childCX, busY, childCX, childBox.Top
+    Next i
+End Sub
+
+Private Sub AddStyledLine_OneSlide60(sld As Object, ByVal x1 As Double, ByVal y1 As Double, ByVal x2 As Double, ByVal y2 As Double)
+    If Abs(x1 - x2) < 0.1 And Abs(y1 - y2) < 0.1 Then Exit Sub
+
+    Dim l As Object
+    Set l = sld.Shapes.AddLine(x1, y1, x2, y2)
+    l.Line.Weight = 1.5
+    l.Line.ForeColor.RGB = RGB(0, 112, 192)
 End Sub
 
 Private Function ChooseGridColumns_OneSlide60(ByVal n As Long, ByVal availW As Double, ByVal availH As Double, ByVal gapX As Double, ByVal gapY As Double) As Long
@@ -654,8 +1011,12 @@ Private Sub DrawOneSlideOrgChartForGroup_V34(ws As Worksheet, pres As Object, ro
             cx = startX + (i - 1) * (boxW + gapX)
 
             Dim shp As Object
+            Dim shpKey As String
+            shpKey = CStr(rowId)
+
             Set shp = DrawBoxStyled_V34(sld, ws, rowId, cx, y, boxW, boxH, fontBase)
-            shapeOf(CStr(rowId)) = shp
+            If shapeOf.Exists(shpKey) Then shapeOf.Remove shpKey
+            shapeOf.Add shpKey, shp
         Next i
 
 NextLevel:
@@ -670,6 +1031,9 @@ NextLevel:
             pidKey = CStr(parentKeys(i))
 
             If shapeOf.Exists(pidKey) Then
+                Dim parentShape As Object
+                Set parentShape = shapeOf(pidKey)
+
                 Dim childRows As Collection
                 Set childRows = SortRowsByName(ws, childrenOf(pidKey))
 
@@ -680,14 +1044,18 @@ NextLevel:
                     Dim childId As Long
                     childId = CLng(childRows(j))
                     If shapeOf.Exists(CStr(childId)) Then
-                        childShapes.Add shapeOf(CStr(childId))
+                        Dim childShape As Object
+                        Set childShape = shapeOf(CStr(childId))
+                        childShapes.Add childShape
                     End If
                 Next j
 
                 If childShapes.Count = 1 Then
-                    AddStraightSafe_V34 sld, shapeOf(pidKey), childShapes(1)
+                    Dim firstChild As Object
+                    Set firstChild = childShapes(1)
+                    AddStraightSafe_V34 sld, parentShape, firstChild
                 ElseIf childShapes.Count > 1 Then
-                    AddBusDownSafe_V34 sld, shapeOf(pidKey), childShapes
+                    AddBusDownSafe_V34 sld, parentShape, childShapes
                 End If
             End If
         Next i
