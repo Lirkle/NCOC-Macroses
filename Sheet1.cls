@@ -24,18 +24,8 @@ Private Const msoConnectorElbow As Long = 2
 Private Const msoFalse As Long = 0
 Private Const msoTrue As Long = -1
 
-' Grid export: legacy button entry point -> unified export UI
+' Grid export: one slide keeps up to 60 employees
 Public Sub BuildOrgChart_OneSlide60_V31()
-    ThisWorkbook.Export_OrgChart_UI
-End Sub
-
-' Hierarchy export: legacy button entry point -> unified export UI
-Public Sub BuildOrgChart_Hierarchy_V34()
-    ThisWorkbook.Export_OrgChart_UI
-End Sub
-
-' Grid export worker
-Public Sub RunExport_Grid_OneSlide60_V31()
     On Error GoTo EH
 
     Dim ws As Worksheet
@@ -51,7 +41,7 @@ Public Sub RunExport_Grid_OneSlide60_V31()
     Dim pres As Object
     Set pres = CreatePresentation()
     If pres Is Nothing Then
-        Err.Raise vbObjectError + 2000, "RunExport_Grid_OneSlide60_V31", "PowerPoint could not be started."
+        Err.Raise vbObjectError + 2000, "BuildOrgChart_OneSlide60_V31", "PowerPoint could not be started."
     End If
 
     Dim startIndex As Long
@@ -78,8 +68,8 @@ EH:
     MsgBox "Grid export failed: " & Err.Description, vbCritical, "Grid Export"
 End Sub
 
-' Hierarchy export worker: manager links inside each split group
-Public Sub RunExport_Hierarchy_V34()
+' Hierarchy export: manager links inside each split group
+Public Sub BuildOrgChart_Hierarchy_V34()
     On Error GoTo EH
 
     Dim ws As Worksheet
@@ -95,7 +85,7 @@ Public Sub RunExport_Hierarchy_V34()
     Dim pres As Object
     Set pres = CreatePresentation()
     If pres Is Nothing Then
-        Err.Raise vbObjectError + 2001, "RunExport_Hierarchy_V34", "PowerPoint could not be started."
+        Err.Raise vbObjectError + 2001, "BuildOrgChart_Hierarchy_V34", "PowerPoint could not be started."
     End If
 
     Dim levelCols As Variant

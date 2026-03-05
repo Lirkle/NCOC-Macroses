@@ -29,8 +29,6 @@ Private Const msoTrue As Long = -1
 Public Sub Export_OrgChart_UI()
     On Error GoTo EH
 
-    UpgradeExportButtonsUI
-
     Dim mode As Long
     mode = AskExportMode()
     If mode = 0 Then Exit Sub
@@ -41,11 +39,11 @@ Public Sub Export_OrgChart_UI()
 
     Select Case mode
         Case 1
-            RunExport_ManagerSlides_V31
+            BuildOrgChart_Final_V31
         Case 2
-            Sheet1.RunExport_Hierarchy_V34
+            Sheet1.BuildOrgChart_Hierarchy_V34
         Case 3
-            Sheet1.RunExport_Grid_OneSlide60_V31
+            Sheet1.BuildOrgChart_OneSlide60_V31
         Case Else
             Err.Raise vbObjectError + 1010, "Export_OrgChart_UI", "Unsupported export mode."
     End Select
@@ -66,21 +64,13 @@ Public Sub Export_OrgChart_Help()
     MsgBox BuildModePrompt(), vbInformation, "Export Org Chart - Modes"
 End Sub
 
-Private Sub Workbook_Open()
-    UpgradeExportButtonsUI
-End Sub
-
 Public Sub BuildOrgChart_Final_V31()
-    Export_OrgChart_UI
-End Sub
-
-Public Sub RunExport_ManagerSlides_V31()
     On Error GoTo EH
 
     Dim ws As Worksheet
     Set ws = GetSourceWorksheet()
     If ws Is Nothing Then
-        Err.Raise vbObjectError + 1000, "RunExport_ManagerSlides_V31", "Source worksheet was not found."
+        Err.Raise vbObjectError + 1000, "BuildOrgChart_Final_V31", "Source worksheet was not found."
     End If
 
     Dim rowsAll As Collection
@@ -93,7 +83,7 @@ Public Sub RunExport_ManagerSlides_V31()
     Dim pres As Object
     Set pres = CreatePresentation()
     If pres Is Nothing Then
-        Err.Raise vbObjectError + 1001, "RunExport_ManagerSlides_V31", "PowerPoint could not be started."
+        Err.Raise vbObjectError + 1001, "BuildOrgChart_Final_V31", "PowerPoint could not be started."
     End If
 
     Dim levelCols As Variant
@@ -156,73 +146,6 @@ Private Function BuildModeSummary(ByVal mode As Long) As String
     End Select
 
     BuildModeSummary = BuildModeSummary & vbCrLf & vbCrLf & "Press OK to start export."
-End Function
-
-Public Sub UpgradeExportButtonsUI()
-    On Error GoTo SafeExit
-
-    Dim ws As Worksheet
-    Set ws = GetSourceWorksheet()
-    If ws Is Nothing Then Exit Sub
-
-    Dim btn As Object
-    On Error Resume Next
-    For Each btn In ws.Buttons
-        RebindButtonControl btn
-    Next btn
-    On Error GoTo SafeExit
-
-    Dim shp As Object
-    For Each shp In ws.Shapes
-        RebindShapeControl shp
-    Next shp
-
-SafeExit:
-End Sub
-
-Private Sub RebindButtonControl(btn As Object)
-    On Error Resume Next
-    Dim action As String
-    action = CStr(btn.OnAction)
-    On Error GoTo 0
-
-    If ShouldRebindAction(action) Then
-        On Error Resume Next
-        btn.OnAction = "'" & ThisWorkbook.Name & "'!Export_OrgChart"
-        btn.Characters.Text = "Export Org Chart"
-        On Error GoTo 0
-    End If
-End Sub
-
-Private Sub RebindShapeControl(shp As Object)
-    On Error Resume Next
-    Dim action As String
-    action = CStr(shp.OnAction)
-    On Error GoTo 0
-
-    If ShouldRebindAction(action) Then
-        On Error Resume Next
-        shp.OnAction = "'" & ThisWorkbook.Name & "'!Export_OrgChart"
-        shp.TextFrame.Characters.Text = "Export Org Chart"
-        If Err.Number <> 0 Then
-            Err.Clear
-            shp.TextFrame2.TextRange.Text = "Export Org Chart"
-        End If
-        On Error GoTo 0
-    End If
-End Sub
-
-Private Function ShouldRebindAction(ByVal actionName As String) As Boolean
-    Dim s As String
-    s = UCase$(Trim$(actionName))
-    If s = "" Then Exit Function
-
-    ShouldRebindAction = _
-        (InStr(1, s, "BUILDORGCHART_FINAL_V31", vbTextCompare) > 0) Or _
-        (InStr(1, s, "BUILDORGCHART_HIERARCHY_V34", vbTextCompare) > 0) Or _
-        (InStr(1, s, "BUILDORGCHART_ONESLIDE60_V31", vbTextCompare) > 0) Or _
-        (InStr(1, s, "EXPORT_ORGCHART_UI", vbTextCompare) > 0) Or _
-        (InStr(1, s, "EXPORT_ORGCHART", vbTextCompare) > 0)
 End Function
 
 Private Function GetSourceWorksheet() As Worksheet
