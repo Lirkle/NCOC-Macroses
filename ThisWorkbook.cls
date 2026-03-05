@@ -1,4 +1,4 @@
-﻿VERSION 1.0 CLASS
+VERSION 1.0 CLASS
 BEGIN
   MultiUse = -1  'True
 END
@@ -972,3 +972,4 @@ Private Function CanonKey(ByVal v As Variant) As String
 
     CanonKey = s
 End Function
+
