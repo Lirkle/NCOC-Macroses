@@ -257,7 +257,7 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
     SW = pres.PageSetup.SlideWidth
     SH = pres.PageSetup.SlideHeight
 
-    AddTitle_OneSlide60_V31 sld, titleText & " (" & CStr(rows.Count) & ")", SW, 28
+    AddReferenceHeader_OneSlide60 sld, SW, titleText
 
     Dim nameToId As Object
     Set nameToId = CreateObject("Scripting.Dictionary")
@@ -362,115 +362,102 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
         If lvKey > maxLevel Then maxLevel = lvKey
     Next k
 
-    Dim marginX As Double: marginX = 24
-    Dim topY As Double: topY = 46
+    Dim marginX As Double: marginX = 34
+    Dim topY As Double: topY = 86
     Dim bottomMargin As Double: bottomMargin = 20
-    Dim gapX As Double: gapX = 10
-    Dim gapY As Double: gapY = 14
-    Dim minBoxW As Double: minBoxW = 78
+    Dim hGap As Double: hGap = 8
+    Dim vGap As Double
+    vGap = 22
+    If maxLevel >= 6 Then vGap = 14
+    If maxLevel <= 3 Then vGap = 30
 
     Dim availW As Double: availW = SW - 2 * marginX
     Dim availH As Double: availH = SH - topY - bottomMargin
-
-    Dim maxPerRow As Long
-    maxPerRow = CLng((availW + gapX) \ (minBoxW + gapX))
-    If maxPerRow < 5 Then maxPerRow = 5
-    If maxPerRow > 14 Then maxPerRow = 14
-
-    Dim rowBatches As New Collection
-    Dim levelIndex As Long
-    For levelIndex = 1 To maxLevel
-        If levels.Exists(CStr(levelIndex)) Then
-            Dim nodes As Collection
-            Set nodes = SortRowsByParentAndName_OneSlide60(ws, levels(CStr(levelIndex)), parentOf)
-
-            Dim startIdx As Long
-            startIdx = 1
-
-            Do While startIdx <= nodes.Count
-                Dim takeN As Long
-                takeN = maxPerRow
-                If startIdx + takeN - 1 > nodes.Count Then
-                    takeN = nodes.Count - startIdx + 1
-                End If
-
-                rowBatches.Add SliceCollection(nodes, startIdx, takeN)
-                startIdx = startIdx + takeN
-            Loop
-        End If
-    Next levelIndex
-
-    If rowBatches.Count = 0 Then Exit Sub
-
-    Dim totalRows As Long
-    totalRows = rowBatches.Count
-
-    If totalRows <= 3 Then
-        gapY = 18
-    ElseIf totalRows >= 7 Then
-        gapY = 10
-    End If
+    If availW <= 80 Or availH <= 80 Then Exit Sub
 
     Dim boxH As Double
-    boxH = (availH - (totalRows - 1) * gapY) / totalRows
-    If boxH > 66 Then boxH = 66
-    If boxH < 26 Then boxH = 26
+    boxH = (availH - (maxLevel - 1) * vGap) / maxLevel
+    If boxH > 64 Then boxH = 64
+    If boxH < 30 Then boxH = 30
+
+    Dim leafMemo As Object
+    Set leafMemo = CreateObject("Scripting.Dictionary")
+
+    Dim rootsSorted As Collection
+    Set rootsSorted = SortRowsByName(ws, roots)
+
+    Dim totalLeaves As Long
+    totalLeaves = 0
+
+    For i = 1 To rootsSorted.Count
+        totalLeaves = totalLeaves + ComputeLeafCount_OneSlide60(ws, CLng(rootsSorted(i)), childrenOf, leafMemo)
+    Next i
+    If totalLeaves < 1 Then totalLeaves = 1
+
+    Dim slotW As Double
+    slotW = availW / totalLeaves
+
+    Dim boxW As Double
+    boxW = slotW - hGap
+    If boxW > 150 Then boxW = 150
+    If boxW < 48 Then boxW = 48
 
     Dim compactMode As Boolean
-    compactMode = (maxPerRow <= 10)
+    compactMode = (boxW < 95 Or maxLevel > 4)
 
     Dim fontBase As Double
-    fontBase = boxH * 0.34
+    fontBase = boxH * 0.2
+    If compactMode Then fontBase = boxH * 0.19
     If fontBase < 6 Then fontBase = 6
     If fontBase > 10 Then fontBase = 10
-    If Not compactMode And fontBase < 7 Then fontBase = 7
+
+    Dim xOf As Object
+    Set xOf = CreateObject("Scripting.Dictionary")
+
+    Dim leafCursor As Long
+    leafCursor = 0
+
+    For i = 1 To rootsSorted.Count
+        AssignTreeX_OneSlide60 ws, CLng(rootsSorted(i)), childrenOf, xOf, leafCursor, slotW, marginX
+    Next i
+
+    For i = 1 To rows.Count
+        rowId = CLng(rows(i))
+        If Not xOf.Exists(CStr(rowId)) Then
+            xOf(CStr(rowId)) = marginX + (leafCursor + 0.5) * slotW
+            leafCursor = leafCursor + 1
+        End If
+    Next i
 
     Dim shapeOf As Object
     Set shapeOf = CreateObject("Scripting.Dictionary")
 
-    Dim rowIndex As Long
-    For rowIndex = 1 To rowBatches.Count
-        Dim nodesRow As Collection
-        Set nodesRow = rowBatches(rowIndex)
+    Dim levelIndex As Long
+    For levelIndex = 1 To maxLevel
+        If levels.Exists(CStr(levelIndex)) Then
+            Dim nodesLevel As Collection
+            Set nodesLevel = SortRowsByParentAndName_OneSlide60(ws, levels(CStr(levelIndex)), parentOf)
 
-        Dim countN As Long
-        countN = nodesRow.Count
-        If countN < 1 Then GoTo NextRowDraw
+            Dim y As Double
+            y = topY + (levelIndex - 1) * (boxH + vGap)
 
-        Dim boxW As Double
-        boxW = (availW - (countN - 1) * gapX) / countN
-        If boxW > 220 Then boxW = 220
-        If boxW < 48 Then boxW = 48
+            Dim j As Long
+            For j = 1 To nodesLevel.Count
+                rowId = CLng(nodesLevel(j))
 
-        Dim rowW As Double
-        rowW = countN * boxW + (countN - 1) * gapX
+                Dim cx As Double
+                cx = CDbl(xOf(CStr(rowId)))
 
-        Dim startX As Double
-        startX = (SW - rowW) / 2 + boxW / 2
+                Dim shp As Object
+                Dim shpKey As String
+                shpKey = CStr(rowId)
 
-        Dim y As Double
-        y = topY + (rowIndex - 1) * (boxH + gapY)
-
-        Dim rowCompact As Boolean
-        rowCompact = compactMode Or (boxW < 110)
-
-        For i = 1 To countN
-            rowId = CLng(nodesRow(i))
-
-            Dim cx As Double
-            cx = startX + (i - 1) * (boxW + gapX)
-
-            Dim shp As Object
-            Dim shpKey As String
-            shpKey = CStr(rowId)
-
-            Set shp = DrawSimpleBox_OneSlide60(sld, ws, rowId, cx, y, boxW, boxH, fontBase, rowCompact)
-            If shapeOf.Exists(shpKey) Then shapeOf.Remove shpKey
-            shapeOf.Add shpKey, shp
-        Next i
-
-NextRowDraw:
-    Next rowIndex
+                Set shp = DrawSimpleBox_OneSlide60(sld, ws, rowId, cx, y, boxW, boxH, fontBase, compactMode)
+                If shapeOf.Exists(shpKey) Then shapeOf.Remove shpKey
+                shapeOf.Add shpKey, shp
+            Next j
+        End If
+    Next levelIndex
 
     Dim parentKeys As Variant
     parentKeys = SortedDictionaryKeys(childrenOf)
@@ -485,22 +472,114 @@ NextRowDraw:
             Set parentShape = shapeOf(pidKey)
 
             Dim childRows As Collection
-            Set childRows = SortRowsByName(ws, childrenOf(pidKey))
+            Set childRows = SortRowsByParentAndName_OneSlide60(ws, childrenOf(pidKey), parentOf)
 
-            Dim j As Long
-            For j = 1 To childRows.Count
+            Dim childShapes As New Collection
+            Dim childIdx As Long
+            For childIdx = 1 To childRows.Count
                 Dim childId As Long
-                childId = CLng(childRows(j))
+                childId = CLng(childRows(childIdx))
                 If shapeOf.Exists(CStr(childId)) Then
                     Dim childShape As Object
                     Set childShape = shapeOf(CStr(childId))
-                    DrawSimpleConnector_OneSlide60 sld, parentShape, childShape
+                    childShapes.Add childShape
                 End If
-            Next j
+            Next childIdx
+
+            If childShapes.Count = 1 Then
+                Dim oneChild As Object
+                Set oneChild = childShapes(1)
+                DrawSimpleConnector_OneSlide60 sld, parentShape, oneChild
+            ElseIf childShapes.Count > 1 Then
+                DrawParentBus_OneSlide60 sld, parentShape, childShapes
+            End If
 
 NextParent:
         Next i
     End If
+End Sub
+
+Private Sub AddReferenceHeader_OneSlide60(sld As Object, ByVal slideW As Double, ByVal titleText As String)
+    Dim hdr As Object
+    Set hdr = sld.Shapes.AddTextbox(msoTextOrientationHorizontal, 20, 8, slideW - 40, 40)
+
+    With hdr.TextFrame.TextRange
+        .Text = "New Organization Chart" & vbCrLf & "as of " & Format(Date, "mmmm d, yyyy")
+        .Font.Name = "Calibri"
+        .Font.Size = 10
+        .Font.Bold = msoTrue
+        .ParagraphFormat.Alignment = 2
+    End With
+    hdr.Line.Visible = msoFalse
+    hdr.Fill.Visible = msoFalse
+
+    Dim note As Object
+    Set note = sld.Shapes.AddTextbox(msoTextOrientationHorizontal, slideW - 360, 4, 340, 26)
+    With note.TextFrame.TextRange
+        .Text = titleText & " | generated " & Format(Date, "yyyy-mm-dd")
+        .Font.Name = "Calibri"
+        .Font.Size = 7
+        .ParagraphFormat.Alignment = 3
+    End With
+    note.Line.Visible = msoFalse
+    note.Fill.Visible = msoFalse
+End Sub
+
+Private Function ComputeLeafCount_OneSlide60(ws As Worksheet, ByVal rowId As Long, childrenOf As Object, memo As Object) As Long
+    Dim key As String
+    key = CStr(rowId)
+
+    If memo.Exists(key) Then
+        ComputeLeafCount_OneSlide60 = CLng(memo(key))
+        Exit Function
+    End If
+
+    Dim cnt As Long
+    cnt = 0
+
+    If childrenOf.Exists(key) Then
+        Dim kids As Collection
+        Set kids = SortRowsByName(ws, childrenOf(key))
+
+        Dim i As Long
+        For i = 1 To kids.Count
+            cnt = cnt + ComputeLeafCount_OneSlide60(ws, CLng(kids(i)), childrenOf, memo)
+        Next i
+    End If
+
+    If cnt < 1 Then cnt = 1
+    memo(key) = cnt
+    ComputeLeafCount_OneSlide60 = cnt
+End Function
+
+Private Sub AssignTreeX_OneSlide60(ws As Worksheet, ByVal rowId As Long, childrenOf As Object, xOf As Object, ByRef leafCursor As Long, ByVal slotW As Double, ByVal leftX As Double)
+    Dim key As String
+    key = CStr(rowId)
+
+    If Not childrenOf.Exists(key) Or childrenOf(key).Count = 0 Then
+        xOf(key) = leftX + (leafCursor + 0.5) * slotW
+        leafCursor = leafCursor + 1
+        Exit Sub
+    End If
+
+    Dim kids As Collection
+    Set kids = SortRowsByName(ws, childrenOf(key))
+
+    Dim firstX As Double
+    Dim lastX As Double
+    Dim i As Long
+
+    For i = 1 To kids.Count
+        AssignTreeX_OneSlide60 ws, CLng(kids(i)), childrenOf, xOf, leafCursor, slotW, leftX
+
+        Dim childX As Double
+        childX = CDbl(xOf(CStr(CLng(kids(i)))))
+
+        If i = 1 Then firstX = childX
+        lastX = childX
+    Next i
+
+    xOf(key) = (firstX + lastX) / 2
 End Sub
 
 Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal rowId As Long, ByVal cx As Double, ByVal y As Double, ByVal boxW As Double, ByVal boxH As Double, ByVal fontSize As Double, ByVal compactMode As Boolean) As Object
@@ -508,8 +587,8 @@ Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal 
     Set box = sld.Shapes.AddShape(msoShapeRectangle, cx - boxW / 2, y, boxW, boxH)
 
     box.Fill.ForeColor.RGB = RGB(255, 255, 255)
-    box.Line.ForeColor.RGB = RGB(120, 120, 120)
-    box.Line.Weight = 0.75
+    box.Line.ForeColor.RGB = RGB(0, 0, 0)
+    box.Line.Weight = 1.2
 
     Dim pos As String
     pos = CleanText(ws.Cells(rowId, COL_POSITION).Value)
@@ -517,16 +596,22 @@ Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal 
     Dim nm As String
     nm = CleanText(ws.Cells(rowId, COL_NAME).Value)
 
+    Dim num As String
+    num = CleanText(ws.Cells(rowId, COL_NUMBER).Value)
+
+    Dim loc As String
+    loc = CleanText(ws.Cells(rowId, COL_LOCATION).Value)
+
     With box.TextFrame
-        .MarginLeft = 2
-        .MarginRight = 2
-        .MarginTop = 2
-        .MarginBottom = 2
-        .WordWrap = msoFalse
+        .MarginLeft = 4
+        .MarginRight = 4
+        .MarginTop = 3
+        .MarginBottom = 3
+        .WordWrap = msoTrue
     End With
 
     Dim charsPerLine As Long
-    charsPerLine = CLng((boxW - 6) / (fontSize * 0.62))
+    charsPerLine = CLng((boxW - 8) / (fontSize * 0.62))
     If charsPerLine < 6 Then charsPerLine = 6
 
     Dim txt As String
@@ -537,7 +622,6 @@ Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal 
             txt = Ellipsize_OneSlide60(nm, charsPerLine)
         Else
             txt = Ellipsize_OneSlide60(pos, charsPerLine) & vbCrLf & Ellipsize_OneSlide60(nm, charsPerLine)
-            box.TextFrame.WordWrap = msoTrue
         End If
     End If
 
@@ -551,7 +635,7 @@ Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal 
 
     On Error Resume Next
     If InStr(txt, vbCrLf) > 0 Then
-        box.TextFrame.TextRange.Paragraphs(1).Font.Color.RGB = RGB(55, 55, 55)
+        box.TextFrame.TextRange.Paragraphs(1).Font.Color.RGB = RGB(0, 0, 0)
         box.TextFrame.TextRange.Paragraphs(1).Font.Size = fontSize - 1
         box.TextFrame.TextRange.Paragraphs(2).Font.Color.RGB = RGB(0, 112, 192)
         box.TextFrame.TextRange.Paragraphs(2).Font.Bold = msoTrue
@@ -560,6 +644,33 @@ Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal 
         box.TextFrame.TextRange.Paragraphs(1).Font.Bold = msoTrue
     End If
     On Error GoTo 0
+
+    Dim metaSize As Double
+    metaSize = fontSize - 1
+    If metaSize < 5.5 Then metaSize = 5.5
+
+    Dim metaTop As Double
+    metaTop = box.Top + boxH - (metaSize + 4)
+
+    Dim tNum As Object
+    Set tNum = sld.Shapes.AddTextbox(msoTextOrientationHorizontal, box.Left + 3, metaTop, boxW / 2 - 5, metaSize + 2)
+    tNum.TextFrame.TextRange.Text = Ellipsize_OneSlide60(num, 10)
+    tNum.TextFrame.TextRange.Font.Name = "Calibri"
+    tNum.TextFrame.TextRange.Font.Size = metaSize
+    tNum.TextFrame.TextRange.Font.Color.RGB = RGB(0, 0, 0)
+    tNum.TextFrame.TextRange.ParagraphFormat.Alignment = 1
+    tNum.Line.Visible = msoFalse
+    tNum.Fill.Visible = msoFalse
+
+    Dim tLoc As Object
+    Set tLoc = sld.Shapes.AddTextbox(msoTextOrientationHorizontal, box.Left + boxW / 2, metaTop, boxW / 2 - 4, metaSize + 2)
+    tLoc.TextFrame.TextRange.Text = Ellipsize_OneSlide60(loc, 8)
+    tLoc.TextFrame.TextRange.Font.Name = "Calibri"
+    tLoc.TextFrame.TextRange.Font.Size = metaSize
+    tLoc.TextFrame.TextRange.Font.Color.RGB = RGB(0, 0, 0)
+    tLoc.TextFrame.TextRange.ParagraphFormat.Alignment = 3
+    tLoc.Line.Visible = msoFalse
+    tLoc.Fill.Visible = msoFalse
 
     Set DrawSimpleBox_OneSlide60 = box
 End Function
