@@ -34,8 +34,19 @@ Public Sub BuildOrgChart_OneSlide60_V31()
     Dim rowsAll As Collection
     Set rowsAll = CollectEmployeeRows(ws)
     If rowsAll.Count = 0 Then
-        MsgBox "No employees found in column A.", vbExclamation, "Grid Export"
+        MsgBox "No employees found in column A.", vbExclamation, "One-Slide Export"
         Exit Sub
+    End If
+
+    Dim rowsOneSlide As Collection
+    Set rowsOneSlide = SortRowsByName(ws, rowsAll)
+
+    If rowsOneSlide.Count > MAX_PER_SLIDE Then
+        Set rowsOneSlide = SliceCollection(rowsOneSlide, 1, MAX_PER_SLIDE)
+        MsgBox "Found " & CStr(rowsAll.Count) & " employees." & vbCrLf & _
+               "One-slide mode supports up to " & CStr(MAX_PER_SLIDE) & "." & vbCrLf & _
+               "Only first " & CStr(MAX_PER_SLIDE) & " employees will be exported.", _
+               vbExclamation, "One-Slide Export"
     End If
 
     Dim pres As Object
@@ -44,28 +55,13 @@ Public Sub BuildOrgChart_OneSlide60_V31()
         Err.Raise vbObjectError + 2000, "BuildOrgChart_OneSlide60_V31", "PowerPoint could not be started."
     End If
 
-    Dim startIndex As Long
-    startIndex = 1
+    DrawOneSlideOrgChartForGroup_V34 ws, pres, rowsOneSlide, "Org chart | Single slide"
 
-    Do While startIndex <= rowsAll.Count
-        Dim endIndex As Long
-        endIndex = startIndex + MAX_PER_SLIDE - 1
-        If endIndex > rowsAll.Count Then endIndex = rowsAll.Count
-
-        Dim batch As Collection
-        Set batch = SliceCollection(rowsAll, startIndex, MAX_PER_SLIDE)
-
-        DrawGridSlide_OneSlide60_V31 ws, pres, batch, _
-            "Org chart (" & CStr(startIndex) & "-" & CStr(endIndex) & " of " & CStr(rowsAll.Count) & ")"
-
-        startIndex = endIndex + 1
-    Loop
-
-    MsgBox "Grid export finished: " & CStr(pres.Slides.Count) & " slide(s).", vbInformation, "Grid Export"
+    MsgBox "One-slide hierarchy export finished: " & CStr(pres.Slides.Count) & " slide(s).", vbInformation, "One-Slide Export"
     Exit Sub
 
 EH:
-    MsgBox "Grid export failed: " & Err.Description, vbCritical, "Grid Export"
+    MsgBox "One-slide export failed: " & Err.Description, vbCritical, "One-Slide Export"
 End Sub
 
 ' Hierarchy export: manager links inside each split group

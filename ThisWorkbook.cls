@@ -126,8 +126,8 @@ Private Function BuildModePrompt() As String
         "   Split by org columns, then manager + direct reports." & vbCrLf & _
         "2. Hierarchy Tree" & vbCrLf & _
         "   One slide per group, full hierarchy with lines." & vbCrLf & _
-        "3. Grid (60 per slide)" & vbCrLf & _
-        "   Fast flat export, no hierarchy lines."
+        "3. One-Slide Hierarchy (up to 60)" & vbCrLf & _
+        "   Full hierarchy with connecting lines on a single slide."
 End Function
 
 Private Function BuildModeSummary(ByVal mode As Long) As String
@@ -139,8 +139,8 @@ Private Function BuildModeSummary(ByVal mode As Long) As String
             BuildModeSummary = "Mode: Hierarchy Tree" & vbCrLf & _
                                "Best for full structural org visualization."
         Case 3
-            BuildModeSummary = "Mode: Grid (60 per slide)" & vbCrLf & _
-                               "Best for quick full-list export."
+            BuildModeSummary = "Mode: One-Slide Hierarchy (up to 60)" & vbCrLf & _
+                               "Best for a compact one-page hierarchy with lines."
         Case Else
             BuildModeSummary = "Mode: Unknown"
     End Select
