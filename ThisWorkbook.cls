@@ -26,6 +26,44 @@ Private Const msoConnectorElbow As Long = 2
 Private Const msoFalse As Long = 0
 Private Const msoTrue As Long = -1
 
+Public Sub Export_OrgChart_UI()
+    On Error GoTo EH
+
+    Dim mode As Long
+    mode = AskExportMode()
+    If mode = 0 Then Exit Sub
+
+    If MsgBox(BuildModeSummary(mode), vbOKCancel + vbInformation, "Export Org Chart") <> vbOK Then Exit Sub
+
+    Application.StatusBar = "Export Org Chart: running..."
+
+    Select Case mode
+        Case 1
+            BuildOrgChart_Final_V31
+        Case 2
+            Sheet1.BuildOrgChart_Hierarchy_V34
+        Case 3
+            Sheet1.BuildOrgChart_OneSlide60_V31
+        Case Else
+            Err.Raise vbObjectError + 1010, "Export_OrgChart_UI", "Unsupported export mode."
+    End Select
+
+    Application.StatusBar = False
+    Exit Sub
+
+EH:
+    Application.StatusBar = False
+    MsgBox "Export UI failed: " & Err.Description, vbCritical, "Export Org Chart"
+End Sub
+
+Public Sub Export_OrgChart()
+    Export_OrgChart_UI
+End Sub
+
+Public Sub Export_OrgChart_Help()
+    MsgBox BuildModePrompt(), vbInformation, "Export Org Chart - Modes"
+End Sub
+
 Public Sub BuildOrgChart_Final_V31()
     On Error GoTo EH
 
@@ -59,6 +97,56 @@ Public Sub BuildOrgChart_Final_V31()
 EH:
     MsgBox "Build failed: " & Err.Description, vbCritical, "Org Chart Export"
 End Sub
+
+Private Function AskExportMode() As Long
+    Do
+        Dim picked As Variant
+        picked = Application.InputBox(BuildModePrompt() & vbCrLf & vbCrLf & "Enter mode number (1-3):", "Export Org Chart", 1, Type:=1)
+
+        If VarType(picked) = vbBoolean Then
+            AskExportMode = 0
+            Exit Function
+        End If
+
+        If IsNumeric(picked) Then
+            If CLng(picked) >= 1 And CLng(picked) <= 3 Then
+                AskExportMode = CLng(picked)
+                Exit Function
+            End If
+        End If
+
+        MsgBox "Please enter 1, 2 or 3 (or press Cancel).", vbExclamation, "Export Org Chart"
+    Loop
+End Function
+
+Private Function BuildModePrompt() As String
+    BuildModePrompt = _
+        "Choose export mode:" & vbCrLf & _
+        "1. Manager Slides (recommended)" & vbCrLf & _
+        "   Split by org columns, then manager + direct reports." & vbCrLf & _
+        "2. Hierarchy Tree" & vbCrLf & _
+        "   One slide per group, full hierarchy with lines." & vbCrLf & _
+        "3. Grid (60 per slide)" & vbCrLf & _
+        "   Fast flat export, no hierarchy lines."
+End Function
+
+Private Function BuildModeSummary(ByVal mode As Long) As String
+    Select Case mode
+        Case 1
+            BuildModeSummary = "Mode: Manager Slides" & vbCrLf & _
+                               "Best for readable manager-centric reporting."
+        Case 2
+            BuildModeSummary = "Mode: Hierarchy Tree" & vbCrLf & _
+                               "Best for full structural org visualization."
+        Case 3
+            BuildModeSummary = "Mode: Grid (60 per slide)" & vbCrLf & _
+                               "Best for quick full-list export."
+        Case Else
+            BuildModeSummary = "Mode: Unknown"
+    End Select
+
+    BuildModeSummary = BuildModeSummary & vbCrLf & vbCrLf & "Press OK to start export."
+End Function
 
 Private Function GetSourceWorksheet() As Worksheet
     On Error Resume Next
