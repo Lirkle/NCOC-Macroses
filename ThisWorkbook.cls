@@ -23,7 +23,6 @@ Private Const msoShapeOval As Long = 9
 Private Const msoTextOrientationHorizontal As Long = 1
 Private Const msoConnectorStraight As Long = 1
 Private Const msoConnectorElbow As Long = 2
-Private Const msoGroup As Long = 6
 Private Const msoFalse As Long = 0
 Private Const msoTrue As Long = -1
 
@@ -65,11 +64,6 @@ End Sub
 
 Public Sub Export_OrgChart_Help()
     MsgBox BuildModePrompt(), vbInformation, "Export Org Chart - Modes"
-End Sub
-
-Public Sub ForceUpgradeExportButtonsUI()
-    UpgradeExportButtonsUI
-    MsgBox "Buttons refreshed. If an ActiveX button still does not trigger export, reassign it to Export_OrgChart manually.", vbInformation, "Export Org Chart"
 End Sub
 
 Private Sub Workbook_Open()
@@ -168,15 +162,8 @@ Public Sub UpgradeExportButtonsUI()
     On Error GoTo SafeExit
 
     Dim ws As Worksheet
-    For Each ws In ThisWorkbook.Worksheets
-        UpgradeSheetControls ws
-    Next ws
-
-SafeExit:
-End Sub
-
-Private Sub UpgradeSheetControls(ws As Worksheet)
-    On Error GoTo SafeExit
+    Set ws = GetSourceWorksheet()
+    If ws Is Nothing Then Exit Sub
 
     Dim btn As Object
     On Error Resume Next
@@ -187,15 +174,8 @@ Private Sub UpgradeSheetControls(ws As Worksheet)
 
     Dim shp As Object
     For Each shp In ws.Shapes
-        RebindShapeRecursive shp
+        RebindShapeControl shp
     Next shp
-
-    Dim ole As Object
-    On Error Resume Next
-    For Each ole In ws.OLEObjects
-        RebindOleControl ole
-    Next ole
-    On Error GoTo 0
 
 SafeExit:
 End Sub
@@ -204,11 +184,9 @@ Private Sub RebindButtonControl(btn As Object)
     On Error Resume Next
     Dim action As String
     action = CStr(btn.OnAction)
-    Dim txt As String
-    txt = CStr(btn.Characters.Text)
     On Error GoTo 0
 
-    If ShouldRebindAction(action) Or LooksLikeExportCaption(txt) Then
+    If ShouldRebindAction(action) Then
         On Error Resume Next
         btn.OnAction = "'" & ThisWorkbook.Name & "'!Export_OrgChart"
         btn.Characters.Text = "Export Org Chart"
@@ -216,30 +194,13 @@ Private Sub RebindButtonControl(btn As Object)
     End If
 End Sub
 
-Private Sub RebindShapeRecursive(shp As Object)
-    On Error GoTo SafeExit
-
-    If shp.Type = msoGroup Then
-        Dim i As Long
-        For i = 1 To shp.GroupItems.Count
-            RebindShapeRecursive shp.GroupItems(i)
-        Next i
-    Else
-        RebindShapeControl shp
-    End If
-
-SafeExit:
-End Sub
-
 Private Sub RebindShapeControl(shp As Object)
     On Error Resume Next
     Dim action As String
     action = CStr(shp.OnAction)
-    Dim txt As String
-    txt = GetShapeText(shp)
     On Error GoTo 0
 
-    If ShouldRebindAction(action) Or LooksLikeExportCaption(txt) Then
+    If ShouldRebindAction(action) Then
         On Error Resume Next
         shp.OnAction = "'" & ThisWorkbook.Name & "'!Export_OrgChart"
         shp.TextFrame.Characters.Text = "Export Org Chart"
@@ -251,48 +212,6 @@ Private Sub RebindShapeControl(shp As Object)
     End If
 End Sub
 
-Private Sub RebindOleControl(ole As Object)
-    On Error Resume Next
-
-    Dim txt As String
-    txt = CStr(ole.Object.Caption)
-
-    If LooksLikeExportCaption(txt) Then
-        ole.Object.Caption = "Export Org Chart"
-    End If
-
-    Dim action As String
-    action = CStr(ole.OnAction)
-    If ShouldRebindAction(action) Or LooksLikeExportCaption(txt) Then
-        ole.OnAction = "'" & ThisWorkbook.Name & "'!Export_OrgChart"
-    End If
-
-    On Error GoTo 0
-End Sub
-
-Private Function GetShapeText(shp As Object) As String
-    On Error Resume Next
-    GetShapeText = CStr(shp.TextFrame.Characters.Text)
-    If Len(GetShapeText) = 0 Then
-        GetShapeText = CStr(shp.TextFrame2.TextRange.Text)
-    End If
-    On Error GoTo 0
-End Function
-
-Private Function LooksLikeExportCaption(ByVal captionText As String) As Boolean
-    Dim s As String
-    s = UCase$(Trim$(captionText))
-    If s = "" Then Exit Function
-
-    LooksLikeExportCaption = _
-        (InStr(1, s, "EXPORT", vbTextCompare) > 0) Or _
-        (InStr(1, s, "ORG", vbTextCompare) > 0) Or _
-        (InStr(1, s, "CHART", vbTextCompare) > 0) Or _
-        (InStr(1, s, "ЭКСПОРТ", vbTextCompare) > 0) Or _
-        (InStr(1, s, "ОРГ", vbTextCompare) > 0) Or _
-        (InStr(1, s, "СТРУКТ", vbTextCompare) > 0)
-End Function
-
 Private Function ShouldRebindAction(ByVal actionName As String) As Boolean
     Dim s As String
     s = UCase$(Trim$(actionName))
@@ -302,9 +221,6 @@ Private Function ShouldRebindAction(ByVal actionName As String) As Boolean
         (InStr(1, s, "BUILDORGCHART_FINAL_V31", vbTextCompare) > 0) Or _
         (InStr(1, s, "BUILDORGCHART_HIERARCHY_V34", vbTextCompare) > 0) Or _
         (InStr(1, s, "BUILDORGCHART_ONESLIDE60_V31", vbTextCompare) > 0) Or _
-        (InStr(1, s, "RUNEXPORT_MANAGERSLIDES_V31", vbTextCompare) > 0) Or _
-        (InStr(1, s, "RUNEXPORT_HIERARCHY_V34", vbTextCompare) > 0) Or _
-        (InStr(1, s, "RUNEXPORT_GRID_ONESLIDE60_V31", vbTextCompare) > 0) Or _
         (InStr(1, s, "EXPORT_ORGCHART_UI", vbTextCompare) > 0) Or _
         (InStr(1, s, "EXPORT_ORGCHART", vbTextCompare) > 0)
 End Function
