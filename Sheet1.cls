@@ -942,7 +942,7 @@ Private Function CanonKey(ByVal v As Variant) As String
     s = Replace(s, "(", " ")
     s = Replace(s, ")", " ")
     s = Replace(s, "/", " ")
-    s = Replace(s, "\", " ")
+    s = Replace(s, Chr$(92), " ")
     s = Replace(s, "'", " ")
     s = Replace(s, """", " ")
 
