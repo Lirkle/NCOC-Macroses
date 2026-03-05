@@ -372,6 +372,14 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
     Dim gapX As Double: gapX = 12
     Dim gapY As Double: gapY = 20
 
+    If maxN > 20 Then
+        gapX = 4
+    ElseIf maxN > 12 Then
+        gapX = 8
+    End If
+
+    If maxLevel > 4 Then gapY = 14
+
     Dim availW As Double: availW = SW - 2 * marginX
     Dim availH As Double: availH = SH - topY - bottomMargin
 
@@ -403,10 +411,19 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
         gapY = gapY * scaleH
     End If
 
+    Dim compactMode As Boolean
+    compactMode = (boxW < 95 Or maxN > 12)
+
     Dim fontBase As Double
-    fontBase = boxH * 0.22
-    If fontBase < 7 Then fontBase = 7
-    If fontBase > 12 Then fontBase = 12
+    If compactMode Then
+        fontBase = boxH * 0.38
+        If fontBase < 6 Then fontBase = 6
+        If fontBase > 10 Then fontBase = 10
+    Else
+        fontBase = boxH * 0.22
+        If fontBase < 7 Then fontBase = 7
+        If fontBase > 12 Then fontBase = 12
+    End If
 
     Dim shapeOf As Object
     Set shapeOf = CreateObject("Scripting.Dictionary")
@@ -416,7 +433,7 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
         If Not levels.Exists(CStr(levelIndex)) Then GoTo NextLevelDraw
 
         Dim nodes As Collection
-        Set nodes = SortRowsByName(ws, levels(CStr(levelIndex)))
+        Set nodes = SortRowsByParentAndName_OneSlide60(ws, levels(CStr(levelIndex)), parentOf)
 
         Dim countN As Long
         countN = nodes.Count
@@ -441,7 +458,7 @@ Private Sub DrawOneSlideHierarchy_OneSlide60(ws As Worksheet, pres As Object, ro
             Dim shpKey As String
             shpKey = CStr(rowId)
 
-            Set shp = DrawSimpleBox_OneSlide60(sld, ws, rowId, cx, y, boxW, boxH, fontBase)
+            Set shp = DrawSimpleBox_OneSlide60(sld, ws, rowId, cx, y, boxW, boxH, fontBase, compactMode)
             If shapeOf.Exists(shpKey) Then shapeOf.Remove shpKey
             shapeOf.Add shpKey, shp
         Next i
@@ -489,12 +506,12 @@ NextParent:
     End If
 End Sub
 
-Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal rowId As Long, ByVal cx As Double, ByVal y As Double, ByVal boxW As Double, ByVal boxH As Double, ByVal fontSize As Double) As Object
+Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal rowId As Long, ByVal cx As Double, ByVal y As Double, ByVal boxW As Double, ByVal boxH As Double, ByVal fontSize As Double, ByVal compactMode As Boolean) As Object
     Dim box As Object
     Set box = sld.Shapes.AddShape(msoShapeRectangle, cx - boxW / 2, y, boxW, boxH)
 
     box.Fill.ForeColor.RGB = RGB(255, 255, 255)
-    box.Line.ForeColor.RGB = RGB(80, 80, 80)
+    box.Line.ForeColor.RGB = RGB(120, 120, 120)
     box.Line.Weight = 0.75
 
     Dim pos As String
@@ -503,11 +520,27 @@ Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal 
     Dim nm As String
     nm = CleanText(ws.Cells(rowId, COL_NAME).Value)
 
-    If pos = "" Then
-        box.TextFrame.TextRange.Text = nm
+    With box.TextFrame
+        .MarginLeft = 2
+        .MarginRight = 2
+        .MarginTop = 2
+        .MarginBottom = 2
+        .WordWrap = msoFalse
+    End With
+
+    Dim txt As String
+    If compactMode Then
+        txt = Ellipsize_OneSlide60(nm, 22)
     Else
-        box.TextFrame.TextRange.Text = pos & vbCrLf & nm
+        If pos = "" Then
+            txt = Ellipsize_OneSlide60(nm, 34)
+        Else
+            txt = Ellipsize_OneSlide60(pos, 28) & vbCrLf & Ellipsize_OneSlide60(nm, 24)
+            box.TextFrame.WordWrap = msoTrue
+        End If
     End If
+
+    box.TextFrame.TextRange.Text = txt
 
     With box.TextFrame.TextRange
         .Font.Name = "Calibri"
@@ -516,8 +549,8 @@ Private Function DrawSimpleBox_OneSlide60(sld As Object, ws As Worksheet, ByVal 
     End With
 
     On Error Resume Next
-    If pos <> "" Then
-        box.TextFrame.TextRange.Paragraphs(1).Font.Color.RGB = RGB(40, 40, 40)
+    If InStr(txt, vbCrLf) > 0 Then
+        box.TextFrame.TextRange.Paragraphs(1).Font.Color.RGB = RGB(55, 55, 55)
         box.TextFrame.TextRange.Paragraphs(1).Font.Size = fontSize - 1
         box.TextFrame.TextRange.Paragraphs(2).Font.Color.RGB = RGB(0, 112, 192)
         box.TextFrame.TextRange.Paragraphs(2).Font.Bold = msoTrue
@@ -602,9 +635,79 @@ Private Sub AddStyledLine_OneSlide60(sld As Object, ByVal x1 As Double, ByVal y1
 
     Dim l As Object
     Set l = sld.Shapes.AddLine(x1, y1, x2, y2)
-    l.Line.Weight = 1.5
+    l.Line.Weight = 1.2
     l.Line.ForeColor.RGB = RGB(0, 112, 192)
 End Sub
+
+Private Function SortRowsByParentAndName_OneSlide60(ws As Worksheet, rows As Collection, parentOf As Object) As Collection
+    Dim sorted As New Collection
+
+    Dim i As Long
+    For i = 1 To rows.Count
+        InsertRowParentName_OneSlide60 ws, sorted, CLng(rows(i)), parentOf
+    Next i
+
+    Set SortRowsByParentAndName_OneSlide60 = sorted
+End Function
+
+Private Sub InsertRowParentName_OneSlide60(ws As Worksheet, sorted As Collection, ByVal rowId As Long, parentOf As Object)
+    Dim insertAt As Long
+    insertAt = sorted.Count + 1
+
+    Dim i As Long
+    For i = 1 To sorted.Count
+        If CompareRowsParentName_OneSlide60(ws, rowId, CLng(sorted(i)), parentOf) < 0 Then
+            insertAt = i
+            Exit For
+        End If
+    Next i
+
+    If insertAt <= sorted.Count Then
+        sorted.Add rowId, , insertAt
+    Else
+        sorted.Add rowId
+    End If
+End Sub
+
+Private Function CompareRowsParentName_OneSlide60(ws As Worksheet, ByVal rowA As Long, ByVal rowB As Long, parentOf As Object) As Long
+    Dim parentA As Long
+    parentA = 0
+    If Not parentOf Is Nothing Then
+        If parentOf.Exists(CStr(rowA)) Then parentA = CLng(parentOf(CStr(rowA)))
+    End If
+
+    Dim parentB As Long
+    parentB = 0
+    If Not parentOf Is Nothing Then
+        If parentOf.Exists(CStr(rowB)) Then parentB = CLng(parentOf(CStr(rowB)))
+    End If
+
+    If parentA < parentB Then
+        CompareRowsParentName_OneSlide60 = -1
+        Exit Function
+    End If
+    If parentA > parentB Then
+        CompareRowsParentName_OneSlide60 = 1
+        Exit Function
+    End If
+
+    CompareRowsParentName_OneSlide60 = CompareRowsByName(ws, rowA, rowB)
+End Function
+
+Private Function Ellipsize_OneSlide60(ByVal txt As String, ByVal maxLen As Long) As String
+    Dim s As String
+    s = CleanText(txt)
+
+    If maxLen < 1 Then maxLen = 1
+
+    If Len(s) <= maxLen Then
+        Ellipsize_OneSlide60 = s
+    ElseIf maxLen = 1 Then
+        Ellipsize_OneSlide60 = Left$(s, 1)
+    Else
+        Ellipsize_OneSlide60 = Left$(s, maxLen - 1) & "..."
+    End If
+End Function
 
 Private Function ChooseGridColumns_OneSlide60(ByVal n As Long, ByVal availW As Double, ByVal availH As Double, ByVal gapX As Double, ByVal gapY As Double) As Long
     Dim bestCols As Long
