@@ -162,52 +162,21 @@ Private Sub DrawGridSlide_OneSlide60_V31(ws As Worksheet, pres As Object, rows A
     n = rows.Count
     If n < 1 Then Exit Sub
 
-    Dim bestCols As Long
-    Dim bestScore As Double
-    bestScore = -1
-
-    Dim tryCols As Long
-    For tryCols = 3 To 12
-        Dim tryRows As Long
-        tryRows = (n + tryCols - 1) \ tryCols
-
-        Dim tryW As Double
-        tryW = (availW - (tryCols - 1) * gapX) / tryCols
-
-        Dim tryH As Double
-        tryH = (availH - (tryRows - 1) * gapY) / tryRows
-
-        If tryW >= 95 And tryH >= 30 Then
-            Dim score As Double
-            score = tryW + tryH * 1.25
-
-            If score > bestScore Then
-                bestScore = score
-                bestCols = tryCols
-            End If
-        End If
-    Next tryCols
-
-    If bestCols = 0 Then
-        bestCols = n
-        If bestCols > 12 Then bestCols = 12
-        If bestCols < 2 Then bestCols = 2
-    End If
-
     Dim cols As Long
-    cols = bestCols
+    cols = ChooseGridColumns_OneSlide60(n, availW, availH, gapX, gapY)
+    If cols < 1 Then cols = 6
 
     Dim rowsCount As Long
     rowsCount = (n + cols - 1) \ cols
 
     Dim boxW As Double
     boxW = (availW - (cols - 1) * gapX) / cols
-    If boxW > 250 Then boxW = 250
+    If boxW > 220 Then boxW = 220
 
     Dim boxH As Double
     boxH = (availH - (rowsCount - 1) * gapY) / rowsCount
     If boxH > 76 Then boxH = 76
-    If boxH < 28 Then boxH = 28
+    If boxH < 34 Then boxH = 34
 
     Dim totalW As Double
     totalW = cols * boxW + (cols - 1) * gapX
@@ -232,32 +201,41 @@ Private Sub DrawGridSlide_OneSlide60_V31(ws As Worksheet, pres As Object, rows A
     End If
 
     Dim fontBase As Double
-    fontBase = boxH * 0.23
-    If fontBase < 6.5 Then fontBase = 6.5
-    If fontBase > 11 Then fontBase = 11
-
-    Dim startX As Double
-    startX = (SW - totalW) / 2 + boxW / 2
+    fontBase = boxH * 0.22
+    If fontBase < 7 Then fontBase = 7
+    If fontBase > 12 Then fontBase = 12
 
     Dim startY As Double
     startY = marginTop + (availH - totalH) / 2
 
     Dim idx As Long
-    For idx = 1 To n
-        Dim rr As Long
-        rr = (idx - 1) \ cols
+    idx = 1
 
-        Dim cc As Long
-        cc = (idx - 1) Mod cols
+    Dim rr As Long
+    For rr = 0 To rowsCount - 1
+        Dim rowItems As Long
+        rowItems = n - rr * cols
+        If rowItems > cols Then rowItems = cols
+        If rowItems < 1 Then Exit For
 
-        Dim cx As Double
-        cx = startX + cc * (boxW + gapX)
+        Dim rowW As Double
+        rowW = rowItems * boxW + (rowItems - 1) * gapX
+
+        Dim rowStartX As Double
+        rowStartX = (SW - rowW) / 2 + boxW / 2
 
         Dim y As Double
         y = startY + rr * (boxH + gapY)
 
-        DrawBoxStyled_V34 sld, ws, CLng(rows(idx)), cx, y, boxW, boxH, fontBase
-    Next idx
+        Dim cc As Long
+        For cc = 0 To rowItems - 1
+            Dim cx As Double
+            cx = rowStartX + cc * (boxW + gapX)
+
+            DrawGridCard_OneSlide60 sld, ws, CLng(rows(idx)), cx, y, boxW, boxH, fontBase
+            idx = idx + 1
+        Next cc
+    Next rr
 End Sub
 
 Private Sub AddTitle_OneSlide60_V31(sld As Object, ByVal txt As String, ByVal slideW As Double, ByVal titleH As Double)
@@ -273,6 +251,139 @@ Private Sub AddTitle_OneSlide60_V31(sld As Object, ByVal txt As String, ByVal sl
 
     t.Line.Visible = msoFalse
     t.Fill.Visible = msoFalse
+End Sub
+
+Private Function ChooseGridColumns_OneSlide60(ByVal n As Long, ByVal availW As Double, ByVal availH As Double, ByVal gapX As Double, ByVal gapY As Double) As Long
+    Dim bestCols As Long
+    Dim bestScore As Double
+    bestScore = -1
+
+    Dim tryCols As Long
+    For tryCols = 3 To 12
+        Dim tryRows As Long
+        tryRows = (n + tryCols - 1) \ tryCols
+
+        Dim tryW As Double
+        tryW = (availW - (tryCols - 1) * gapX) / tryCols
+
+        Dim tryH As Double
+        tryH = (availH - (tryRows - 1) * gapY) / tryRows
+
+        If tryW > 70 And tryH > 24 Then
+            Dim widthFit As Double
+            widthFit = tryW / 118
+            If widthFit > 1 Then widthFit = 1
+
+            Dim heightFit As Double
+            heightFit = tryH / 40
+            If heightFit > 1 Then heightFit = 1
+
+            Dim ratioFit As Double
+            ratioFit = 1 - Abs((tryW / tryH) - 2.1) / 2.1
+            If ratioFit < 0 Then ratioFit = 0
+
+            Dim score As Double
+            score = widthFit * 4 + heightFit * 2 + ratioFit
+
+            If score > bestScore Then
+                bestScore = score
+                bestCols = tryCols
+            End If
+        End If
+    Next tryCols
+
+    If bestCols = 0 Then
+        bestCols = n
+        If bestCols > 10 Then bestCols = 10
+        If bestCols < 2 Then bestCols = 2
+    End If
+
+    ChooseGridColumns_OneSlide60 = bestCols
+End Function
+
+Private Sub DrawGridCard_OneSlide60(sld As Object, ws As Worksheet, ByVal rowId As Long, ByVal cx As Double, ByVal y As Double, ByVal boxW As Double, ByVal boxH As Double, ByVal fontSize As Double)
+    Dim box As Object
+    Set box = sld.Shapes.AddShape(msoShapeRectangle, cx - boxW / 2, y, boxW, boxH)
+
+    box.Fill.ForeColor.RGB = RGB(255, 255, 255)
+    box.Line.ForeColor.RGB = RGB(140, 140, 140)
+    box.Line.Weight = 0.75
+
+    With box.TextFrame
+        .MarginLeft = 6
+        .MarginRight = 6
+        .MarginTop = 4
+        .MarginBottom = 4
+        .WordWrap = msoTrue
+    End With
+
+    Dim pos As String
+    pos = CleanText(ws.Cells(rowId, COL_POSITION).Value)
+
+    Dim nm As String
+    nm = CleanText(ws.Cells(rowId, COL_NAME).Value)
+
+    Dim num As String
+    num = CleanText(ws.Cells(rowId, COL_NUMBER).Value)
+
+    Dim loc As String
+    loc = CleanText(ws.Cells(rowId, COL_LOCATION).Value)
+
+    Dim meta As String
+    If num <> "" Then meta = num
+    If loc <> "" Then
+        If meta = "" Then
+            meta = loc
+        Else
+            meta = meta & " | " & loc
+        End If
+    End If
+
+    Dim hasPos As Boolean
+    hasPos = (pos <> "")
+
+    Dim txt As String
+    If hasPos Then
+        txt = pos & vbCrLf & nm
+    Else
+        txt = nm
+    End If
+    If meta <> "" Then txt = txt & vbCrLf & meta
+
+    Dim tr As Object
+    Set tr = box.TextFrame.TextRange
+    tr.Text = txt
+    tr.Font.Name = "Calibri"
+    tr.ParagraphFormat.Alignment = 2
+
+    On Error Resume Next
+    Dim metaSize As Double
+    metaSize = fontSize - 2
+    If metaSize < 6.5 Then metaSize = 6.5
+
+    If hasPos Then
+        tr.Paragraphs(1).Font.Size = fontSize - 1
+        tr.Paragraphs(1).Font.Color.RGB = RGB(40, 40, 40)
+
+        tr.Paragraphs(2).Font.Size = fontSize
+        tr.Paragraphs(2).Font.Bold = msoTrue
+        tr.Paragraphs(2).Font.Color.RGB = RGB(0, 112, 192)
+
+        If meta <> "" Then
+            tr.Paragraphs(3).Font.Size = metaSize
+            tr.Paragraphs(3).Font.Color.RGB = RGB(90, 90, 90)
+        End If
+    Else
+        tr.Paragraphs(1).Font.Size = fontSize
+        tr.Paragraphs(1).Font.Bold = msoTrue
+        tr.Paragraphs(1).Font.Color.RGB = RGB(0, 112, 192)
+
+        If meta <> "" Then
+            tr.Paragraphs(2).Font.Size = metaSize
+            tr.Paragraphs(2).Font.Color.RGB = RGB(90, 90, 90)
+        End If
+    End If
+    On Error GoTo 0
 End Sub
 
 Private Sub SplitAndDraw_V34(ws As Worksheet, pres As Object, rows As Collection, levelCols As Variant, ByVal level As Long, ByVal path As String)
