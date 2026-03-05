@@ -556,7 +556,13 @@ Private Sub AssignTreeX_OneSlide60(ws As Worksheet, ByVal rowId As Long, childre
     Dim key As String
     key = CStr(rowId)
 
-    If Not childrenOf.Exists(key) Or childrenOf(key).Count = 0 Then
+    If Not childrenOf.Exists(key) Then
+        xOf(key) = leftX + (leafCursor + 0.5) * slotW
+        leafCursor = leafCursor + 1
+        Exit Sub
+    End If
+
+    If childrenOf(key).Count = 0 Then
         xOf(key) = leftX + (leafCursor + 0.5) * slotW
         leafCursor = leafCursor + 1
         Exit Sub
@@ -1567,7 +1573,12 @@ Private Function CompareRowsByName(ws As Worksheet, ByVal rowA As Long, ByVal ro
 End Function
 
 Private Function SortedDictionaryKeys(dict As Object) As Variant
-    If dict Is Nothing Or dict.Count = 0 Then
+    If dict Is Nothing Then
+        SortedDictionaryKeys = Array()
+        Exit Function
+    End If
+
+    If dict.Count = 0 Then
         SortedDictionaryKeys = Array()
         Exit Function
     End If
