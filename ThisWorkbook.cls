@@ -370,20 +370,24 @@ Private Sub DrawManagerSlide_V31(ws As Worksheet, pres As Object, ByVal mgrRow A
     Dim idx As Long
     Dim rowId As Long
     Dim empBox As Object
+    Dim leftBoxes As New Collection
+    Dim rightBoxes As New Collection
 
     For idx = 1 To leftCount
         rowId = CLng(reports(idx))
         Set empBox = DrawBoxStyled_V31(sld, ws, rowId, leftCX, startY + (idx - 1) * (repH + vGap), colW, repH, repFont)
         SafeSetTag_V31 empBox, "col", "1"
-        DrawConnSmart_V31 sld, mgrBox, empBox, repCount
+        leftBoxes.Add empBox
     Next idx
 
     For idx = 1 To rightCount
         rowId = CLng(reports(leftCount + idx))
         Set empBox = DrawBoxStyled_V31(sld, ws, rowId, rightCX, startY + (idx - 1) * (repH + vGap), colW, repH, repFont)
         SafeSetTag_V31 empBox, "col", "2"
-        DrawConnSmart_V31 sld, mgrBox, empBox, repCount
+        rightBoxes.Add empBox
     Next idx
+
+    DrawManagerBus_V31 sld, mgrBox, leftBoxes, rightBoxes
 End Sub
 
 Private Sub DrawUnlinkedSlides_V31(ws As Worksheet, pres As Object, rows As Collection, ByVal groupTitle As String)
@@ -527,12 +531,113 @@ Private Sub DrawUnlinkedGridSlide_V31(ws As Worksheet, pres As Object, rows As C
     Next idx
 End Sub
 
-Private Sub DrawConnSmart_V31(sld As Object, mgrBox As Object, empBox As Object, ByVal totalKids As Long)
-    If totalKids <= 1 Then
-        AddStraight_V31 sld, mgrBox, empBox
-    Else
-        AddElbow_EmployeeToManager_V31 sld, mgrBox, empBox
+Private Sub DrawManagerBus_V31(sld As Object, mgrBox As Object, leftBoxes As Collection, rightBoxes As Collection)
+    Dim mgrCX As Double
+    mgrCX = mgrBox.Left + mgrBox.Width / 2
+
+    Dim mgrBY As Double
+    mgrBY = mgrBox.Top + mgrBox.Height
+
+    Dim minChildTop As Double
+    minChildTop = 1E+30
+
+    Dim i As Long
+    Dim b As Object
+
+    For i = 1 To leftBoxes.Count
+        Set b = leftBoxes(i)
+        If b.Top < minChildTop Then minChildTop = b.Top
+    Next i
+
+    For i = 1 To rightBoxes.Count
+        Set b = rightBoxes(i)
+        If b.Top < minChildTop Then minChildTop = b.Top
+    Next i
+
+    If minChildTop >= 1E+30 Then Exit Sub
+
+    Dim busY As Double
+    busY = mgrBY + 16
+
+    If busY > minChildTop - 10 Then
+        busY = (mgrBY + (minChildTop - 10)) / 2
     End If
+
+    If busY <= mgrBY + 2 Then
+        busY = mgrBY + 2
+    End If
+
+    AddStyledLine_V31 sld, mgrCX, mgrBY, mgrCX, busY
+
+    If leftBoxes.Count > 0 Then
+        DrawSideBus_V31 sld, mgrCX, busY, leftBoxes, True
+    End If
+
+    If rightBoxes.Count > 0 Then
+        DrawSideBus_V31 sld, mgrCX, busY, rightBoxes, False
+    End If
+End Sub
+
+Private Sub DrawSideBus_V31(sld As Object, ByVal mgrCX As Double, ByVal busY As Double, boxes As Collection, ByVal isLeft As Boolean)
+    If boxes Is Nothing Then Exit Sub
+    If boxes.Count = 0 Then Exit Sub
+
+    Dim firstBox As Object
+    Set firstBox = boxes(1)
+
+    Dim firstAttachX As Double
+    If isLeft Then
+        firstAttachX = firstBox.Left + firstBox.Width
+    Else
+        firstAttachX = firstBox.Left
+    End If
+
+    Dim railX As Double
+    If isLeft Then
+        railX = firstAttachX + 18
+    Else
+        railX = firstAttachX - 18
+    End If
+
+    AddStyledLine_V31 sld, mgrCX, busY, railX, busY
+
+    Dim maxCY As Double
+    maxCY = busY
+
+    Dim i As Long
+    Dim b As Object
+    Dim childCY As Double
+
+    For i = 1 To boxes.Count
+        Set b = boxes(i)
+        childCY = b.Top + b.Height / 2
+        If childCY > maxCY Then maxCY = childCY
+    Next i
+
+    AddStyledLine_V31 sld, railX, busY, railX, maxCY
+
+    For i = 1 To boxes.Count
+        Set b = boxes(i)
+        childCY = b.Top + b.Height / 2
+
+        Dim attachX As Double
+        If isLeft Then
+            attachX = b.Left + b.Width
+        Else
+            attachX = b.Left
+        End If
+
+        AddStyledLine_V31 sld, railX, childCY, attachX, childCY
+    Next i
+End Sub
+
+Private Sub AddStyledLine_V31(sld As Object, ByVal x1 As Double, ByVal y1 As Double, ByVal x2 As Double, ByVal y2 As Double)
+    If Abs(x1 - x2) < 0.1 And Abs(y1 - y2) < 0.1 Then Exit Sub
+
+    Dim l As Object
+    Set l = sld.Shapes.AddLine(x1, y1, x2, y2)
+    l.Line.Weight = 2
+    l.Line.ForeColor.RGB = RGB(0, 112, 192)
 End Sub
 
 Private Sub AddStraight_V31(sld As Object, fromBox As Object, toBox As Object)
@@ -542,26 +647,7 @@ Private Sub AddStraight_V31(sld As Object, fromBox As Object, toBox As Object)
     x2 = toBox.Left + toBox.Width / 2
     y2 = toBox.Top
 
-    On Error GoTo Fallback
-
-    Dim c As Object
-    Set c = sld.Shapes.AddConnector(msoConnectorStraight, x1, y1, x2, y2)
-
-    c.ConnectorFormat.BeginConnect fromBox, 3
-    c.ConnectorFormat.EndConnect toBox, 1
-    c.ConnectorFormat.RerouteConnections
-
-    c.Line.Weight = 2
-    c.Line.ForeColor.RGB = RGB(0, 112, 192)
-    Exit Sub
-
-Fallback:
-    On Error GoTo 0
-
-    Dim l As Object
-    Set l = sld.Shapes.AddLine(x1, y1, x2, y2)
-    l.Line.Weight = 2
-    l.Line.ForeColor.RGB = RGB(0, 112, 192)
+    AddStyledLine_V31 sld, x1, y1, x2, y2
 End Sub
 
 Private Sub AddElbow_EmployeeToManager_V31(sld As Object, mgrBox As Object, empBox As Object)
@@ -599,49 +685,11 @@ Private Sub AddElbow_EmployeeToManager_V31(sld As Object, mgrBox As Object, empB
         empAttachX = empBox.Left
     End If
 
-    Dim kneeX As Double
-    kneeX = mgrCX
-
     Dim kneeY As Double
     kneeY = empCY
 
-    On Error GoTo Fallback
-
-    Dim node As Object
-    Set node = sld.Shapes.AddShape(msoShapeOval, kneeX - 1, kneeY - 1, 2, 2)
-    node.Line.Visible = msoFalse
-    node.Fill.Visible = msoFalse
-
-    Dim c1 As Object
-    Set c1 = sld.Shapes.AddConnector(msoConnectorElbow, mgrCX, mgrBY, kneeX, kneeY)
-    c1.ConnectorFormat.BeginConnect mgrBox, 3
-    c1.ConnectorFormat.EndConnect node, 1
-    c1.ConnectorFormat.RerouteConnections
-    c1.Line.Weight = 2
-    c1.Line.ForeColor.RGB = RGB(0, 112, 192)
-
-    Dim c2 As Object
-    Set c2 = sld.Shapes.AddConnector(msoConnectorElbow, kneeX, kneeY, empAttachX, empCY)
-    c2.ConnectorFormat.BeginConnect node, 1
-    c2.ConnectorFormat.EndConnect empBox, empSide
-    c2.ConnectorFormat.RerouteConnections
-    c2.Line.Weight = 2
-    c2.Line.ForeColor.RGB = RGB(0, 112, 192)
-
-    Exit Sub
-
-Fallback:
-    On Error GoTo 0
-
-    Dim l1 As Object, l2 As Object
-    Set l1 = sld.Shapes.AddLine(mgrCX, mgrBY, kneeX, kneeY)
-    Set l2 = sld.Shapes.AddLine(kneeX, kneeY, empAttachX, empCY)
-
-    l1.Line.Weight = 2
-    l1.Line.ForeColor.RGB = RGB(0, 112, 192)
-
-    l2.Line.Weight = 2
-    l2.Line.ForeColor.RGB = RGB(0, 112, 192)
+    AddStyledLine_V31 sld, mgrCX, mgrBY, mgrCX, kneeY
+    AddStyledLine_V31 sld, mgrCX, kneeY, empAttachX, empCY
 End Sub
 
 Private Sub SafeSetTag_V31(shp As Object, ByVal key As String, ByVal value As String)

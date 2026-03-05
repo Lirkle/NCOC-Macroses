@@ -554,65 +554,63 @@ Private Sub DrawOneSlideOrgChartForGroup_V34(ws As Worksheet, pres As Object, ro
 NextLevel:
     Next levelIndex
 
-    Dim sortedRows As Collection
-    Set sortedRows = SortRowsByName(ws, rows)
+    Dim parentKeys As Variant
+    parentKeys = SortedDictionaryKeys(childrenOf)
 
-    For i = 1 To sortedRows.Count
-        Dim childId As Long
-        childId = CLng(sortedRows(i))
+    If HasArrayItems(parentKeys) Then
+        For i = LBound(parentKeys) To UBound(parentKeys)
+            Dim pidKey As String
+            pidKey = CStr(parentKeys(i))
 
-        Dim pid As Long
-        pid = CLng(parentOf(CStr(childId)))
+            If shapeOf.Exists(pidKey) Then
+                Dim childRows As Collection
+                Set childRows = SortRowsByName(ws, childrenOf(pidKey))
 
-        If pid <> 0 Then
-            If shapeOf.Exists(CStr(pid)) And shapeOf.Exists(CStr(childId)) Then
-                Dim pBox As Object
-                Set pBox = shapeOf(CStr(pid))
+                Dim childShapes As New Collection
+                Dim j As Long
 
-                Dim cBox As Object
-                Set cBox = shapeOf(CStr(childId))
+                For j = 1 To childRows.Count
+                    Dim childId As Long
+                    childId = CLng(childRows(j))
+                    If shapeOf.Exists(CStr(childId)) Then
+                        childShapes.Add shapeOf(CStr(childId))
+                    End If
+                Next j
 
-                Dim childCount As Long
-                childCount = 0
-                If childrenOf.Exists(CStr(pid)) Then childCount = childrenOf(CStr(pid)).Count
-
-                If childCount <= 1 Then
-                    AddStraightSafe_V34 sld, pBox, cBox
-                Else
-                    AddElbowSafe_V34 sld, pBox, cBox
+                If childShapes.Count = 1 Then
+                    AddStraightSafe_V34 sld, shapeOf(pidKey), childShapes(1)
+                ElseIf childShapes.Count > 1 Then
+                    AddBusDownSafe_V34 sld, shapeOf(pidKey), childShapes
                 End If
             End If
-        End If
-    Next i
+        Next i
+    End If
 End Sub
 
 Private Sub AddStraightSafe_V34(sld As Object, parentBox As Object, childBox As Object)
-    Dim x1 As Double, y1 As Double, x2 As Double, y2 As Double
-    x1 = parentBox.Left + parentBox.Width / 2
-    y1 = parentBox.Top + parentBox.Height
-    x2 = childBox.Left + childBox.Width / 2
-    y2 = childBox.Top
+    Dim parentCX As Double
+    parentCX = parentBox.Left + parentBox.Width / 2
 
-    On Error GoTo Fallback
+    Dim parentBY As Double
+    parentBY = parentBox.Top + parentBox.Height
 
-    Dim c As Object
-    Set c = sld.Shapes.AddConnector(msoConnectorStraight, x1, y1, x2, y2)
+    Dim childCX As Double
+    childCX = childBox.Left + childBox.Width / 2
 
-    c.ConnectorFormat.BeginConnect parentBox, 3
-    c.ConnectorFormat.EndConnect childBox, 1
-    c.ConnectorFormat.RerouteConnections
+    Dim childTY As Double
+    childTY = childBox.Top
 
-    c.Line.Weight = 2
-    c.Line.ForeColor.RGB = RGB(0, 112, 192)
-    Exit Sub
+    Dim midY As Double
+    midY = (parentBY + childTY) / 2
 
-Fallback:
-    On Error GoTo 0
+    If midY <= parentBY + 1 Or midY >= childTY - 1 Then
+        AddStyledLine_V34 sld, parentCX, parentBY, childCX, childTY
+        Exit Sub
+    End If
 
-    Dim l As Object
-    Set l = sld.Shapes.AddLine(x1, y1, x2, y2)
-    l.Line.Weight = 2
-    l.Line.ForeColor.RGB = RGB(0, 112, 192)
+    AddStyledLine_V34 sld, parentCX, parentBY, parentCX, midY
+    AddStyledLine_V34 sld, parentCX, midY, childCX, midY
+    AddStyledLine_V34 sld, childCX, midY, childCX, childTY
 End Sub
 
 Private Sub AddElbowSafe_V34(sld As Object, parentBox As Object, childBox As Object)
@@ -637,34 +635,74 @@ Private Sub AddElbowSafe_V34(sld As Object, parentBox As Object, childBox As Obj
         childX = childBox.Left
     End If
 
-    On Error GoTo Fallback
+    AddStyledLine_V34 sld, parentCX, parentBY, parentCX, childCY
+    AddStyledLine_V34 sld, parentCX, childCY, childX, childCY
+End Sub
 
-    Dim c As Object
-    Set c = sld.Shapes.AddConnector(msoConnectorElbow, childX, childCY, parentCX, parentBY)
+Private Sub AddBusDownSafe_V34(sld As Object, parentBox As Object, childShapes As Collection)
+    If childShapes Is Nothing Then Exit Sub
+    If childShapes.Count < 2 Then Exit Sub
 
-    c.ConnectorFormat.BeginConnect childBox, childSide
-    c.ConnectorFormat.EndConnect parentBox, 3
-    c.ConnectorFormat.RerouteConnections
+    Dim parentCX As Double
+    parentCX = parentBox.Left + parentBox.Width / 2
 
-    c.Line.Weight = 2
-    c.Line.ForeColor.RGB = RGB(0, 112, 192)
-    Exit Sub
+    Dim parentBY As Double
+    parentBY = parentBox.Top + parentBox.Height
 
-Fallback:
-    On Error GoTo 0
+    Dim minChildTop As Double
+    minChildTop = 1E+30
 
-    Dim midX As Double
-    midX = (childX + parentCX) / 2
+    Dim minCX As Double
+    minCX = 1E+30
 
-    Dim l1 As Object, l2 As Object
-    Set l1 = sld.Shapes.AddLine(childX, childCY, midX, childCY)
-    Set l2 = sld.Shapes.AddLine(midX, childCY, parentCX, parentBY)
+    Dim maxCX As Double
+    maxCX = -1E+30
 
-    l1.Line.Weight = 2
-    l1.Line.ForeColor.RGB = RGB(0, 112, 192)
+    Dim i As Long
+    Dim childBox As Object
 
-    l2.Line.Weight = 2
-    l2.Line.ForeColor.RGB = RGB(0, 112, 192)
+    For i = 1 To childShapes.Count
+        Set childBox = childShapes(i)
+
+        Dim childCX As Double
+        childCX = childBox.Left + childBox.Width / 2
+
+        If childBox.Top < minChildTop Then minChildTop = childBox.Top
+        If childCX < minCX Then minCX = childCX
+        If childCX > maxCX Then maxCX = childCX
+    Next i
+
+    If minChildTop >= 1E+30 Then Exit Sub
+
+    Dim busY As Double
+    busY = parentBY + 14
+
+    If busY > minChildTop - 10 Then
+        busY = (parentBY + (minChildTop - 10)) / 2
+    End If
+
+    If busY <= parentBY + 2 Then busY = parentBY + 2
+
+    If parentCX < minCX Then minCX = parentCX
+    If parentCX > maxCX Then maxCX = parentCX
+
+    AddStyledLine_V34 sld, parentCX, parentBY, parentCX, busY
+    AddStyledLine_V34 sld, minCX, busY, maxCX, busY
+
+    For i = 1 To childShapes.Count
+        Set childBox = childShapes(i)
+        childCX = childBox.Left + childBox.Width / 2
+        AddStyledLine_V34 sld, childCX, busY, childCX, childBox.Top
+    Next i
+End Sub
+
+Private Sub AddStyledLine_V34(sld As Object, ByVal x1 As Double, ByVal y1 As Double, ByVal x2 As Double, ByVal y2 As Double)
+    If Abs(x1 - x2) < 0.1 And Abs(y1 - y2) < 0.1 Then Exit Sub
+
+    Dim l As Object
+    Set l = sld.Shapes.AddLine(x1, y1, x2, y2)
+    l.Line.Weight = 2
+    l.Line.ForeColor.RGB = RGB(0, 112, 192)
 End Sub
 
 Private Function DrawBoxStyled_V34(sld As Object, ws As Worksheet, ByVal rowId As Long, ByVal cx As Double, ByVal y As Double, ByVal boxW As Double, ByVal boxH As Double, ByVal fontSize As Double) As Object
