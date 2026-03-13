@@ -119,8 +119,8 @@ Private Sub ProcessOneDocument(ByVal filePath As String, ByVal wordApp As Object
 
     Set lines = ReadDocumentLines(doc)
     englishName = ValueAfterLabel(lines, "Position:")
-    russianName = ValueAfterLabel(lines, "Должность:")
-    kazakhName = ValueAfterLabel(lines, "Лауазым атауы:")
+    russianName = ValueAfterLabel(lines, RussianPositionLabel())
+    kazakhName = ValueAfterLabel(lines, KazakhPositionLabel())
 
     If Len(englishName) = 0 Then issues = AppendIssue(issues, "Missing English title")
     If Len(russianName) = 0 Then issues = AppendIssue(issues, "Missing Russian title")
@@ -213,8 +213,8 @@ End Function
 Private Sub PrepareOutputSheet(ByVal ws As Worksheet)
     ws.Cells.Clear
     ws.Cells(1, 1).Value = "English"
-    ws.Cells(1, 2).Value = "Русский"
-    ws.Cells(1, 3).Value = "Қазақша"
+    ws.Cells(1, 2).Value = RussianHeader()
+    ws.Cells(1, 3).Value = KazakhHeader()
     ws.Cells(1, 4).Value = "Source file"
 End Sub
 
@@ -298,4 +298,28 @@ Private Function WorksheetMax(ByVal a As Long, ByVal b As Long) As Long
     Else
         WorksheetMax = b
     End If
+End Function
+
+Private Function RussianPositionLabel() As String
+    RussianPositionLabel = U(&H414, &H43E, &H43B, &H436, &H43D, &H43E, &H441, &H442, &H44C, &H3A)
+End Function
+
+Private Function KazakhPositionLabel() As String
+    KazakhPositionLabel = U(&H41B, &H430, &H443, &H430, &H437, &H44B, &H43C, &H20, &H430, &H442, &H430, &H443, &H44B, &H3A)
+End Function
+
+Private Function RussianHeader() As String
+    RussianHeader = U(&H420, &H443, &H441, &H441, &H43A, &H438, &H439)
+End Function
+
+Private Function KazakhHeader() As String
+    KazakhHeader = U(&H49A, &H430, &H437, &H430, &H49B, &H448, &H430)
+End Function
+
+Private Function U(ParamArray codes() As Variant) As String
+    Dim i As Long
+
+    For i = LBound(codes) To UBound(codes)
+        U = U & ChrW$(CLng(codes(i)))
+    Next i
 End Function
