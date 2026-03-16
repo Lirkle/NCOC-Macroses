@@ -19,6 +19,7 @@ Public Sub BuildPositionsListFromFolder(ByVal folderPath As String)
     Dim outputRow As Long
     Dim processedCount As Long
     Dim issueCount As Long
+    Dim issueSummary As String
     Dim hasDocs As Boolean
     Dim previousCalculation As XlCalculation
     Dim previousEnableEvents As Boolean
@@ -55,7 +56,7 @@ Public Sub BuildPositionsListFromFolder(ByVal folderPath As String)
 
     outputRow = 2
 
-    hasDocs = ProcessWordFiles(folderPath, wordApp, ws, outputRow, processedCount, issueCount)
+    hasDocs = ProcessWordFiles(folderPath, wordApp, ws, outputRow, processedCount, issueCount, issueSummary)
 
     If Not hasDocs Then
         MsgBox "No Word files (.docx or .doc) found in: " & folderPath, vbInformation
@@ -68,6 +69,11 @@ Public Sub BuildPositionsListFromFolder(ByVal folderPath As String)
            "Processed files: " & processedCount & vbCrLf & _
            "Rows in " & OUTPUT_SHEET & ": " & WorksheetMax(0, outputRow - 2) & vbCrLf & _
            "Files with issues: " & issueCount, vbInformation
+
+    If issueCount > 0 Then
+        MsgBox "Attention: some files were processed with missing data or errors." & vbCrLf & vbCrLf & issueSummary, vbExclamation
+    End If
+
     GoTo CleanExit
 
 CleanFail:
@@ -88,7 +94,8 @@ End Sub
 
 Private Function ProcessWordFiles(ByVal folderPath As String, ByVal wordApp As Object, _
                                   ByVal ws As Worksheet, ByRef outputRow As Long, _
-                                  ByRef processedCount As Long, ByRef issueCount As Long) As Boolean
+                                  ByRef processedCount As Long, ByRef issueCount As Long, _
+                                  ByRef issueSummary As String) As Boolean
     Dim fileName As String
     Dim filePath As String
     Dim extensionText As String
@@ -103,7 +110,7 @@ Private Function ProcessWordFiles(ByVal folderPath As String, ByVal wordApp As O
                 ProcessWordFiles = True
                 filePath = folderPath & "\" & fileName
                 Application.StatusBar = "Reading " & fileName & "..."
-                ProcessOneDocument filePath, wordApp, ws, outputRow, processedCount, issueCount
+                ProcessOneDocument filePath, wordApp, ws, outputRow, processedCount, issueCount, issueSummary
             End If
         End If
 
@@ -112,7 +119,8 @@ Private Function ProcessWordFiles(ByVal folderPath As String, ByVal wordApp As O
 End Function
 
 Private Sub ProcessOneDocument(ByVal filePath As String, ByVal wordApp As Object, ByVal ws As Worksheet, _
-                               ByRef outputRow As Long, ByRef processedCount As Long, ByRef issueCount As Long)
+                               ByRef outputRow As Long, ByRef processedCount As Long, ByRef issueCount As Long, _
+                               ByRef issueSummary As String)
     Dim doc As Object
     Dim englishName As String
     Dim russianName As String
@@ -140,6 +148,7 @@ Private Sub ProcessOneDocument(ByVal filePath As String, ByVal wordApp As Object
 
     If Len(issues) > 0 Then
         issueCount = issueCount + 1
+        AppendIssueSummary issueSummary, filePath, issues
     End If
 
     processedCount = processedCount + 1
@@ -155,6 +164,7 @@ CleanExit:
 HandleFail:
     issueCount = issueCount + 1
     processedCount = processedCount + 1
+    AppendIssueSummary issueSummary, filePath, "Open/process error: " & Err.Description
     Resume CleanExit
 End Sub
 
@@ -164,9 +174,11 @@ Private Sub ExtractPositionNames(ByVal doc As Object, ByRef englishName As Strin
     Dim textValue As String
     Dim awaitingLanguage As String
     Dim russianLabel As String
+    Dim russianAltLabel As String
     Dim kazakhLabel As String
 
     russianLabel = RussianPositionLabel()
+    russianAltLabel = RussianAltPositionLabel()
     kazakhLabel = KazakhPositionLabel()
 
     For Each paragraph In doc.Paragraphs
@@ -190,6 +202,8 @@ Private Sub ExtractPositionNames(ByVal doc As Object, ByRef englishName As Strin
             ElseIf StrComp(textValue, "Position:", vbTextCompare) = 0 Then
                 awaitingLanguage = "en"
             ElseIf StrComp(textValue, russianLabel, vbTextCompare) = 0 Then
+                awaitingLanguage = "ru"
+            ElseIf StrComp(textValue, russianAltLabel, vbTextCompare) = 0 Then
                 awaitingLanguage = "ru"
             ElseIf StrComp(textValue, kazakhLabel, vbTextCompare) = 0 Then
                 awaitingLanguage = "kk"
@@ -271,6 +285,18 @@ Private Function AppendIssue(ByVal existingText As String, ByVal newText As Stri
     End If
 End Function
 
+Private Sub AppendIssueSummary(ByRef issueSummary As String, ByVal filePath As String, ByVal details As String)
+    Dim fileName As String
+
+    fileName = Mid$(filePath, InStrRev(filePath, "\") + 1)
+
+    If Len(issueSummary) > 0 Then
+        issueSummary = issueSummary & vbCrLf
+    End If
+
+    issueSummary = issueSummary & fileName & " - " & details
+End Sub
+
 Private Function PickFolder(ByVal initialFolder As String) As String
     With Application.FileDialog(4)
         .Title = "Select folder with Word documents"
@@ -302,6 +328,10 @@ End Function
 
 Private Function RussianPositionLabel() As String
     RussianPositionLabel = U(&H414, &H43E, &H43B, &H436, &H43D, &H43E, &H441, &H442, &H44C, &H3A)
+End Function
+
+Private Function RussianAltPositionLabel() As String
+    RussianAltPositionLabel = U(&H41D, &H430, &H437, &H432, &H430, &H43D, &H438, &H435, &H20, &H434, &H43E, &H43B, &H436, &H43D, &H43E, &H441, &H442, &H438, &H3A)
 End Function
 
 Private Function KazakhPositionLabel() As String
